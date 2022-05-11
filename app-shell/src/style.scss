@@ -1,0 +1,346 @@
+html {
+  font-size: 14px;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.nav-link {
+  padding: 0;
+}
+
+.nav-item a {
+  padding: 0 0.5rem;
+}
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+.box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+$tile-height: 70px;
+$tile-width: 70px;
+$tile-gap: 10px;
+
+footer {
+  padding-top: 50px;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: calc(100vw - calc(100vw - 100%));
+
+  .text-lightgray {
+    color: #aaa;
+  }
+
+  img#smapiot-logo {
+    position: relative;
+    top: 4px;
+  }
+
+  a:hover {
+    border-bottom: 1px dashed gray;
+  }
+}
+
+#landing-introduction {
+  display: block;
+  align-content: center;
+  width: 50%;
+  margin: auto;
+  padding: 50px;
+}
+
+#landing-products-list {
+  width: 70%;
+  margin: auto;
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+  }
+
+  .card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    display: inline-block;
+  }
+
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+// old style
+* {
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+aside {
+  border-top: 1px solid gray;
+  padding-top: 20px;
+}
+
+dl {
+  display: grid;
+  grid-column-gap: 15px;
+  grid-row-gap: 2px;
+  grid-template-columns: 2fr 1fr;
+  max-width: 300px;
+}
+
+dt {
+  text-align: right;
+}
+
+dd {
+  margin: 0;
+}
+
+#webhop-main {
+  display: grid;
+  grid-column-gap: 20px;
+  grid-gap: 20px;
+  grid-row-gap: 10px;
+  margin: auto;
+  min-width: 500px;
+  max-width: 1000px;
+
+  outline: 3px dashed orangered;
+  padding: 15px;
+
+  // img {
+  //   max-width: 200px;
+  // }
+}
+
+// @media only screen and (min-width: 1000px) {
+#webhop-main {
+  grid-template-areas:
+    "store   name      reco"
+    "imgMain desc    reco"
+    "imgMain buy     reco"
+    "options options options";
+  grid-template-columns: 4fr 3fr 200px;
+  width: 1000px;
+}
+// }
+
+// @media only screen and (max-width: 999px) {
+//   #webhop-main {
+//     grid-template-areas:
+//       "store basket"
+//       "image name"
+//       "image options"
+//       "image buy"
+//       "reco reco";
+//     grid-template-columns: 4fr 3fr;
+//   }
+// }
+
+#description {
+  grid-area: desc;
+}
+#imageMain img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 500px !important;
+  height: 500px !important;
+
+  grid-area: imgMain;
+}
+#reco {
+  grid-area: reco;
+}
+
+@media only screen and (max-width: 999px) {
+  #reco {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  #reco {
+    justify-content: stretch;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+#reco h3 {
+  font-weight: 400;
+}
+
+#reco img {
+  display: inline-block;
+  height: 180px;
+  width: 180px;
+}
+
+#reco button {
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+.green-recos {
+  // display: block;
+  outline: 3px dashed yellow;
+  width: 100%;
+}
+
+#buy {
+  align-self: center;
+  grid-area: buy;
+}
+.blue-buy {
+  display: block;
+  outline: 3px dashed royalblue;
+  padding: 5px;
+}
+
+#options {
+  align-self: center;
+  display: flex;
+  grid-area: options;
+}
+
+#options img {
+  max-width: 200px;
+}
+
+#options button {
+  border: none;
+  border-bottom: 2px solid white;
+  cursor: pointer;
+  display: block;
+  margin: 2px;
+  outline: none;
+  padding: 0;
+}
+
+#options button.active,
+#options button:hover {
+  border-bottom-color: seagreen;
+}
+
+// #store {
+//   font-weight: 400;
+//   grid-area: store;
+//   margin-top: 5px;
+// }
+
+// #basket {
+//   align-self: baseline;
+//   grid-area: basket;
+//   justify-self: end;
+//   margin-top: 11px;
+// }
+
+// #basket .empty,
+// #basket .filled {
+//   border-radius: 5px;
+//   color: white;
+//   padding: 5px 10px;
+// }
+
+// #basket .empty {
+//   background-color: gray;
+// }
+
+// #basket .filled {
+//   background-color: seagreen;
+// }
+
+// #image {
+//   grid-area: image;
+//   width: 100%;
+// }
+
+// #image > div {
+//   padding-top: 100%;
+//   position: relative;
+// }
+
+// #image img {
+//   bottom: 0;
+//   left: 0;
+//   max-width: 100%;
+//   position: absolute;
+//   right: 0;
+//   top: 0;
+// }
+
+// #name {
+//   font-weight: 400;
+//   grid-area: name;
+//   height: 3em;
+// }
+
+// #name small {
+//   font-size: 1em;
+//   font-weight: 200;
+// }
+
+// #options img {
+//   display: block;
+//   max-width: 100%;
+// }
+
+// #buy button {
+//   background: none;
+//   border: 1px solid gray;
+//   border-radius: 20px;
+//   cursor: pointer;
+//   display: block;
+//   font-size: 20px;
+//   outline: none;
+//   padding: 20px;
+//   width: 100%;
+// }
+
+// #buy button:hover {
+//   border-color: black;
+// }
+
+// #buy button:active {
+//   border-color: seagreen;
+// }
+
+// .blue-basket {
+//   display: block;
+//   outline: 3px dashed royalblue;
+//   padding: 5px;
+// }
