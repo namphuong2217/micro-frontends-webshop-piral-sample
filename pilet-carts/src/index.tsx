@@ -2,6 +2,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import { PiletApi } from "app-shell";
 import { BuyButton } from "./components/BuyButton";
+import { CartPage } from "./components/CartPage";
 
 interface BuyButtonExtension {
   product: any;
@@ -14,7 +15,7 @@ export function setup(app: PiletApi) {
     var cart = app.getData("cart-data");
     cart.push(item);
     app.setData("cart-data", cart);
-    console.log("Cart: ", cart.length);
+    console.log("Cart: ", cart);
   };
 
   app.registerExtension<BuyButtonExtension>("buy-button", ({ params }) => (
@@ -23,8 +24,12 @@ export function setup(app: PiletApi) {
 
   // Cart event
   app.registerMenu("cart-menu", () => {
-    var cartSnapshot = app.getData("cart-data").length;
-    return cartSnapshot && <Link to="/cart">Cart - {cartSnapshot} </Link>;
+    var cartSnapshot = app.getData("cart-data");
+    if (cartSnapshot.length > 0) {
+      return <Link to="/cart">Cart - {cartSnapshot} </Link>;
+    } else {
+      return <p> </p>;
+    }
   });
 
   app.on("store-data", ({ name }) => {
@@ -34,4 +39,9 @@ export function setup(app: PiletApi) {
       ));
     }
   });
+
+  // register Cart page
+  app.registerPage("/cart", () => (
+    <CartPage cart={app.getData("cart-data")}></CartPage>
+  ));
 }

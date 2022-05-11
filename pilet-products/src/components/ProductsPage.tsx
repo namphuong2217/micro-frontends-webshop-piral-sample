@@ -64,7 +64,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                 >
                   Purchase Product
                 </button>
-                <Link to={`/products/${product.id}`}>My Page</Link>
+                {/* <Link to={`/products/${product.id}`}>My Page</Link> */}
               </div>
             </div>
           ))}

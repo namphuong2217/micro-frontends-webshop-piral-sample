@@ -19,17 +19,6 @@ const feedUrl =
 
 const landing: React.FC = () => <Redirect to="/landing" />;
 
-// renderInstance({
-//   layout,
-//   errors,
-//   plugins: [createVueApi(), createMenuApi(), createContainersApi()],
-//   requestPilets() {
-//     return fetch(feedUrl)
-//       .then((res) => res.json())
-//       .then((res) => res.items);
-//   },
-// });
-
 const piralInstance = createInstance({
   state: {
     components: layout,
@@ -57,6 +46,7 @@ render(app, document.querySelector("#app"));
 // renderInstance({
 //   layout,
 //   errors,
+//   plugins: [createVueApi(), createMenuApi(), createContainersApi()],
 //   requestPilets() {
 //     return fetch(feedUrl)
 //       .then((res) => res.json())
