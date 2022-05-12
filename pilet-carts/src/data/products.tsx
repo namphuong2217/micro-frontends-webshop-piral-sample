@@ -19,12 +19,12 @@ export const products = [
   },
   {
     id: "3",
-    name: "Desert Breeze",
+    name: "Green Rose",
     image: require("../assets/images/tea3.jpg"),
     price: 50,
     category: "B",
     description:
-      "Key flavors: Earthy, mint Fresh, earthy & sensible. Ingredients: Organic green tea, organic peppermint.",
+      "Key flavors: Rose, earthy, fresh. An ethereal blend of rose petals, Late Spring green tea & a hint of organic spearmint grown in 123 Farm's desert climate. *Packaging may vary. Ingredients: Organic green tea, organic rose petals, organic spearmint leaves.",
   },
   {
     id: "4",

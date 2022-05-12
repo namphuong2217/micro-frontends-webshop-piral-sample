@@ -28,7 +28,7 @@ export function setup(app: PiletApi) {
     if (cartSnapshot.length > 0) {
       return <Link to="/cart">Cart - {cartSnapshot} </Link>;
     } else {
-      return <p> </p>;
+      return <Link to="/cart">Cart from Pilet Carts</Link>;
     }
   });
 

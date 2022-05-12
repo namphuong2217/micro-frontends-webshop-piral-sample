@@ -123,6 +123,14 @@ dd {
   margin: 0;
 }
 
+.products-page {
+  outline: 3px dashed orangered;
+  padding: 15px;
+  display: block;
+  width: 90%;
+  margin: auto;
+}
+
 #webhop-main {
   display: grid;
   grid-column-gap: 20px;

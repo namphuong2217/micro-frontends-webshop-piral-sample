@@ -13,7 +13,7 @@ interface CartPageProps {
 
 export const CartPage: React.FC<CartPageProps> = ({ cart }) => {
   return (
-    <div className="container">
+    <div className="container blue-buy">
       <div className="row">
         <div className="col-md">
           <h3>Cart</h3>
