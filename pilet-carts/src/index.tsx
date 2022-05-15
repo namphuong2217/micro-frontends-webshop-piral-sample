@@ -9,6 +9,12 @@ interface BuyButtonExtension {
 }
 
 export function setup(app: PiletApi) {
+  // page resgistrations
+
+  app.registerPage("/cart", () => (
+    <CartPage cart={app.getData("cart-data")}></CartPage>
+  ));
+
   app.setData("cart-data", []);
 
   const addToCart = (item) => {
@@ -39,9 +45,4 @@ export function setup(app: PiletApi) {
       ));
     }
   });
-
-  // register Cart page
-  app.registerPage("/cart", () => (
-    <CartPage cart={app.getData("cart-data")}></CartPage>
-  ));
 }

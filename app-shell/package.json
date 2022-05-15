@@ -18,7 +18,9 @@
   "app": "./src/index.html",
   "pilets": {
     "files": [],
-    "externals": [],
+    "externals": [
+      "vue"
+    ],
     "scripts": {},
     "validators": {},
     "devDependencies": {},

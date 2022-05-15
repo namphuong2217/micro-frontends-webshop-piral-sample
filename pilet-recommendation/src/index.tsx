@@ -7,7 +7,7 @@ interface RecommendationExtension {
 }
 
 export function setup(app: PiletApi) {
-  const navigateToNewProduct = (id) => {
+  const emitEventData = (id) => {
     app.emit("recommendation-click-event", {
       id,
     });
@@ -16,10 +16,7 @@ export function setup(app: PiletApi) {
   app.registerExtension<RecommendationExtension>(
     "recommendations",
     ({ params }) => (
-      <Recommendations
-        category={params.category}
-        navigate={navigateToNewProduct}
-      />
+      <Recommendations category={params.category} navigate={emitEventData} />
     )
   );
 }

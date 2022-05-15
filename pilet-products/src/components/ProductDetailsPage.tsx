@@ -13,10 +13,9 @@ export interface ProductDetailsPageProps {
   Recommendations: React.ComponentType<{
     category: string;
   }>;
-  // BasketInfo: React.ComponentType;
 }
 
-export const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({
+const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({
   id,
   history,
   BuyButton,
@@ -36,7 +35,6 @@ export const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({
             <h2 id="name">{currentDisplayedProduct.name} </h2>
             {currentDisplayedProduct.description}
           </p>
-          {/* <BasketInfo /> */}
           <div id="imageMain">
             <div>
               <img
@@ -46,7 +44,6 @@ export const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({
             </div>
           </div>
           <BuyButton product={currentDisplayedProduct} />
-
           <div id="options">
             <h2>Other Categories</h2>
             <br></br>
@@ -72,3 +69,5 @@ export const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({
     )
   );
 };
+
+export default ProductDetailsPage;

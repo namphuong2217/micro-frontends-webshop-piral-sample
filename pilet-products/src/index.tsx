@@ -2,13 +2,14 @@ import * as React from "react";
 import { Redirect } from "react-router-dom";
 import { PiletApi } from "app-shell";
 import { ProductsPage } from "./components/ProductsPage";
-import { ProductDetailsPage } from "./components/ProductDetailsPage";
-import { SetRedirect } from "piral";
 import { createBrowserHistory } from "history";
 
-history: History;
+const ProductDetailsPage = React.lazy(
+  () => import("./components/ProductDetailsPage")
+);
 
 export function setup(app: PiletApi) {
+  // page resgistrations
   app.registerPage("/landing", ({ history }) => (
     <ProductsPage history={history} />
   ));
@@ -52,9 +53,13 @@ export function setup(app: PiletApi) {
     const navigateToNewPage = () => {
       history.push(`/products/${data.id}`);
       window.location.reload();
-      // <Redirect to={`/products/${data.productId}`} />;
-      // <SetRedirect from="/" to="/landing" />;
     };
     return navigateToNewPage();
   });
 }
+
+// <Redirect to={`/products/${data.productId}`} />;
+// <SetRedirect from="/" to="/landing" />;
+// history: History;
+// import { ProductDetailsPage } from "./components/ProductDetailsPage";
+// import { SetRedirect } from "piral";

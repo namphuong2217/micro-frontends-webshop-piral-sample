@@ -15,7 +15,7 @@ export interface BuyButtonProps {
 export const BuyButton: React.FC<BuyButtonProps> = ({ product, addToCart }) => (
   <div className="blue-buy" id="buy">
     <button type="button" onClick={() => addToCart(product)}>
-      Purchase for {product.price} $
+      Purchase for {product.price}$
     </button>
   </div>
 );

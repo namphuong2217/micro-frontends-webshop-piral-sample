@@ -23,9 +23,6 @@ export const Recommendations: React.FC<RecommendationsProps> = ({
             key={recommendationProduct.id}
             type="button"
             onClick={() => navigate(recommendationProduct.id)}
-            // onClick={() =>
-            //   history.push(`/products/${recommendationProduct.id}`)
-            // }
           >
             <img
               src={recommendationProduct.image}
@@ -33,15 +30,21 @@ export const Recommendations: React.FC<RecommendationsProps> = ({
               alt={recommendationProduct.name}
             />
           </button>
-          {/* <Link to={`/products/${recommendationProduct.id}`}>
-            <img
-              src={recommendationProduct.image}
-              key={recommendationProduct.id}
-              alt={recommendationProduct.name}
-            />
-          </Link> */}
         </>
       ))}
     </div>
   );
 };
+
+// onClick={() =>
+//   history.push(`/products/${recommendationProduct.id}`)
+// }
+{
+  /* <Link to={`/products/${recommendationProduct.id}`}>
+            <img
+              src={recommendationProduct.image}
+              key={recommendationProduct.id}
+              alt={recommendationProduct.name}
+            />
+          </Link> */
+}
