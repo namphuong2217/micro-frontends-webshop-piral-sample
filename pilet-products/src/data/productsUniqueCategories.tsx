@@ -26,4 +26,13 @@ export const productsUniqueCategories = [
     description:
       "Key flavors: Earthy, green A satisfying everyday green tea. Premium hand-picked. Ingredients: Organic green tea.",
   },
+  {
+    id: "10",
+    name: "KINTO tea canisters",
+    image: require("../assets/images/tea10.jpg"),
+    price: 25,
+    category: "D",
+    description:
+      "Glass canister with acacia wood lid, perfect for storing loose-leaf tea. See exactly what and how much is inside, while the silicone-lined lid keeps contents fresh.",
+  },
 ];

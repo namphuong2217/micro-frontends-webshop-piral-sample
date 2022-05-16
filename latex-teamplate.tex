@@ -1,7 +1,23 @@
 \begin{lstlisting}{language=Python}
   // ...
-  
+const ProductDetailsPage = React.lazy(
+  () => import("./components/ProductDetailsPage")
+);
+
+export function setup(app: PiletApi) {
+  // page resgistrations
+  app.registerPage("/landing", ({ history }) => ( // ... ));
+
+  app.registerPage("/products/:id?", ({ history, match, piral }) => (
+    <ProductDetailsPage
+      id={match.params.id || "1"}
+      history={history}
+      BuyButton={({ product }) => ( // ... )}
+      Recommendations={({ category }) => ( // ... )}
+    />
+  ));
   // ...
+  }
 \end{lstlisting}
 
 \begin{itemize}
@@ -21,7 +37,7 @@
   \centering
   \captionsetup{justification=centering}
   \includegraphics[height=6cm]{knowledge-sharing-event.png}
-  % \caption{Caption for this figure.}
+  \caption{Caption for this figure.}
   \label{fig:1}
 \end{figure}
 

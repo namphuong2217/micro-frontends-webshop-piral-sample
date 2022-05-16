@@ -80,4 +80,31 @@ export const productsRecommendation = [
     description:
       "Key flavors: Herbs, grass, tannins. Pure ground organic green tea leaves grown wild and unshaded in full sun. Nutrient-dense with intense flavor.",
   },
+  {
+    id: "10",
+    name: "KINTO tea canisters",
+    image: require("../assets/images/tea10.jpg"),
+    price: 25,
+    category: "D",
+    description:
+      "Glass canister with acacia wood lid, perfect for storing loose-leaf tea. See exactly what and how much is inside, while the silicone-lined lid keeps contents fresh.",
+  },
+  {
+    id: "11",
+    name: "KINTO all glass teapot",
+    image: require("../assets/images/tea11.jpg"),
+    price: 22,
+    category: "D",
+    description:
+      "Teapot made entirely of glass so your tea touches no silicone, plastic, metal, or any other materials. Sudden temperature change may break or shatter the product.",
+  },
+  {
+    id: "12",
+    name: "KINTO easy teapot",
+    image: require("../assets/images/tea12.jpg"),
+    price: 30,
+    category: "D",
+    description:
+      "Heat-resistant glass teapot with a silicone-lined stainless steel lid that also functions as a strainer. To prevent rust, immediately hand-wash and dry well after use.",
+  },
 ];
