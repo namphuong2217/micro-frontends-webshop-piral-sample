@@ -30,7 +30,7 @@ const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({
       <>
         <div id="webhop-main">
           <h1 id="store">Wild Orchard Store</h1>
-          <h2 id="name"> </h2>
+          <h2 id="name"></h2>
           <p id="description">
             <h2 id="name">{currentDisplayedProduct.name} </h2>
             {currentDisplayedProduct.description}

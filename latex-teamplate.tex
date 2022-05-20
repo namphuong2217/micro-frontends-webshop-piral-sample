@@ -1,23 +1,6 @@
-\begin{lstlisting}{language=Python}
-  // ...
-const ProductDetailsPage = React.lazy(
-  () => import("./components/ProductDetailsPage")
-);
+\begin{lstlisting}[caption={}]
+  
 
-export function setup(app: PiletApi) {
-  // page resgistrations
-  app.registerPage("/landing", ({ history }) => ( // ... ));
-
-  app.registerPage("/products/:id?", ({ history, match, piral }) => (
-    <ProductDetailsPage
-      id={match.params.id || "1"}
-      history={history}
-      BuyButton={({ product }) => ( // ... )}
-      Recommendations={({ category }) => ( // ... )}
-    />
-  ));
-  // ...
-  }
 \end{lstlisting}
 
 \begin{itemize}
@@ -49,3 +32,5 @@ export function setup(app: PiletApi) {
 %   ISBN = {978-1-80056-356-8},
 %   Address                  = {Livery Place, 35 Livery Street, Birmingham, B3 2PB, UK}
 % }
+
+Let’s look at an example of the config file \verb|index.tsx| in \verb|pilet-products|.

@@ -136,9 +136,11 @@
   \begin{large}
     \textbf{
       \begin{tabular}{ll}
-      First Supervisor:   Prof. Dr. Manfred Kaul \\
-      Second Supervisor:  Prof. Dr. Sascha Alda \\
+      First Examiner:   Prof. Dr. Manfred Kaul \\
+      Second Examiner:  Prof. Dr. Sascha Alda \\
                      \\
+      Supervisor: Bernd Böllert 
+      \\ \\
       Submitted on: \datum\ \\ %% or type in: 01. Januar 2017
       \end{tabular}
     }
@@ -176,11 +178,11 @@ Signature
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Dankesagung
 
-\clearpage
-\section*{Acknowledgements}
-1--2 paragraphs \\
+% \clearpage
+% \section*{Acknowledgements}
+% 1--2 paragraphs \\
 
-Thank the people who helped you achieve this academic goal.
+% Thank the people who helped you achieve this academic goal.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Zusammenfassung || Abstract
@@ -189,8 +191,7 @@ Thank the people who helped you achieve this academic goal.
 \section*{Abstract}
 1 paragraph \\
 
-Summarize your thesis. This is usually done last after you have written the rest
-of your thesis.
+Section \ref{Micro Frontends Sample Application} and Section \ref{Micro Frontends Implementations} present the results of this study. Finally, Section \ref{Evaluation of Sample Applications} discuss the results of the research and the wider context. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Content and list of figures and tables
@@ -204,67 +205,154 @@ of your thesis.
 \pagenumbering{arabic}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Kapitel 1 || Chapter 1
+%% Chapter 1
 
 \chapter{Introduction}
 
  \section{Motivation and Problem}
-Thanks to technological developments and advancements, the tech industry did see vast changes in Frontend development and the need of efficient tools to maintain Frontend projects naturally rises. Of all changes, one worth being mentioned is Micro Frontends architecture style with its benefits that resemble those of Microservices as a means of maintaining large web applications. Some underlying reasons for the choice are continual feature development and extensions, autonomous and distributed teams’ collaboration, and maintenance of smaller codebases. 
+Thanks to technological developments and advancements, the tech industry did see vast changes in Frontend development and the need of efficient tools to maintain Frontend projects naturally rises. Of all changes, one worth being mentioned is Micro Frontends architecture style with its benefits that resemble those of Microservices as a means of maintaining large web applications. Some underlying reasons for the choice are continual feature development and extensions, autonomous and distributed teams’ collaboration, and maintenance of smaller code bases. 
 \\
 \\
-Decent architectures have made it much easier than ever for developers to work with a project, which is also the case in Frontend development. So far, a great variety of projects is implemented in the form of monolith application, which means a large and coupling system governed by a single team in most cases. This approach can be increasingly problematic if business involves improving and adding new features continually. The company’s low investment and concern in Frontend architecture shown by the gigantic size of their codebase or long release cycles may fail to meet the expectation of fast delivery in production or even hurt its rankings on job market competitiveness. Besides, any system with strong ties to a fixed technology stack can suffer from legacy problems in the future such as feature extensions and software migration. Adopting current and modern technologies can serve as an important factor to for instance attract more developers to consider the hiring position a future work and avoid facing recruiting challenges for highly skilled occupations in the market.
+Decent architectures have made it much easier than ever for developers to work with a project, which is also the case in Frontend development. So far, a great variety of projects is implemented in the form of monolith application, which means a large and coupling system governed by a single team in most cases. This approach can be increasingly problematic if business involves improving and adding new features continually. The company’s low investment and concern in Frontend architecture shown by the gigantic size of their code base or long release cycles may fail to meet the expectation of fast delivery in production or even hurt its rankings on job market competitiveness. Besides, any system with strong ties to a fixed technology stack can suffer from legacy problems in the future such as feature extensions and software migration. Adopting current and modern technologies can serve as an important factor to for instance attract more developers to consider the hiring position a future work and avoid facing recruiting challenges for highly skilled occupations in the market.
 \\
 \\
 This challenge also applies to the backend where a decent solution with thriving community is identified with the name of Microservices. In place of a single monolith application, the system is divided in different and independent services, which are later integrated together, for scaling, maintenance and deployment purpose. This architecture style on the backend offers a wide range of benefits such as better failure isolation, autonomous teamwork, independent deployments, clear architectural boundaries, faster release cycle or faster time to market. Ultimately, a system with independent services that represent one coherent application comes to being.
 \\
 \\
-The thesis aims to analyze and evaluate Micro Frontends, which follows the architecture pattern of Microservices on frontend side. Micro Frontends architecture is a young technology with many implementations. However, an industry standard has not come to exist thus far. A detailed comparison of different Micro Frontends solutions or practical evaluation of Micro frontends solutions might not yet exist. The concepts and motivations for adopting Micro Frontends as a Frontend solution will be explained theoretically and practically. Micro Frontends project devoid of decent architecture consideration will lead to unwanted redundancy, problematic integration and bad user experience. Furthermore, to implement true "self-contained-systems" with this architecture style, the UIs should only be connected to each other with links for the desired true decoupling. 
+The thesis aims to analyze and evaluate Micro Frontends, which follows the architecture pattern of Microservices on Frontend side. Micro Frontends architecture is a young technology with many implementations. However, an industry standard has not come to exist thus far. A detailed comparison of different Micro Frontends solutions or practical evaluation of Micro Frontends solutions might not yet exist. The concepts and motivations for adopting Micro Frontends as a Frontend solution will be explained theoretically and practically. 
 
 \section{Goals and Targets}
-This thesis will present the fundamentals and principles of Micro Frontends with focus on dynamic Micro Frontends on the client-side. Topics like integration and coupling of Micro Frontends, performance, CSS scoping and responsive design, navigation, authentication, sharing dependencies, cross-framework components, distributed and vertical team structure, unit and integration testing, best practices and practical techniques will be addressed in detail. 
+This thesis will present the fundamentals,  principles of Micro Frontends with focus on dynamic Micro Frontends on the client-side and its impact on software development either architecturally or organizationally. Topics like integration and coupling of Micro Frontends, performance, CSS scoping, navigation, authentication, sharing dependencies, cross-framework components, distributed and vertical team structure, unit and integration testing, best practices and practical techniques will be addressed in detail. 
 \\
 \\
-In addition, the thesis not only presents readers the diversity of Micro Frontend architecture styles but also introduces two important solutions: Webpack Module Federation and Piral. Using the thesis helps us picture this architecture style and assists readers with Piral and Webpack Module Federation learning, two crucial components of Micro Frontend solutions. The first solution using Module Federation presents to readers the dynamic integration of Micro Frontend in run-time by Webpack. The second solution is Piral, a fully-fledged framework for Micro Frontends solution. Could the solutions make use of any number of technologies, that is Frontend frameworks like React, Vue, Angular and their different versions? Which are best practices and practical techniques to accomplish “Micro Frontends” integration and communication? Readers can naturally take it in by observing the Micro Frontends live besides each other.
+In addition, the thesis not only presents readers the diversity of Micro Frontend architecture styles but also introduces two important solutions: Web Components and Piral. Using the thesis helps us picture this architecture style and assists readers with Piral and Web Components learning, two crucial components of Micro Frontend solutions. The first solution using Web Components presents to readers the dynamic integration of Micro Frontend in client-side composition. The second solution is Piral, a fully-fledged framework for Micro Frontends solution. Readers can naturally take it in by observing the Micro Frontends live besides each other.
+\\ \\
+Empirical research is based on analysis of code snippets and sample applications which are quality-assured with unit testing. 
 \\
 \\
-A simple Web shop system as a proof of concept will be built and examined in detail using Webpack Module Federation and Piral Framework. Technology stacks used are Webpack, Piral, React, Vue, Svelte. Requirements for studying the thesis are basic understanding of HTML, CSS, JavaScript, and Web development.
+A simple Web shop system as a proof of concept will be built and examined in detail using Web Components and Piral Framework. Technology stacks used are Web Components, Piral, React, Vue, Svelte. Requirements for studying the thesis are basic understanding of HTML, CSS, JavaScript, and Web development.
 
-\section{Roadmap of Thesis }
- \textit{Roadmap of thesis}
- 
+\section{Road map of Thesis }
+ \textit{Road map of thesis}
+
+\chapter{Origin of work}
+This chapter provides the context of the research work.
+\\ \\
+The company that actively promotes participation on the subject matter is Adesso, one of the leading IT service providers in the German-speaking area with a team of around 6.300 employees on 44 sites. Adesso works with a customer named Sartorius of bio-pharmaceutical industry. Sartorius adopts Piral as their Micro Frontends framework solution and collaborate with Adesso on the project. In this context, Adesso realized while Microservices has become an established approach, many portals or single page app (SPA) are still delivered as a monolith and therefore promoted some research on the subject matter. The micro architecture should somehow extend to Frontend layer. In practice, Micro Frontends project devoid of decent architecture consideration will lead to unwanted redundancy, problematic integration and bad user experience. Furthermore, to implement true self-contained-systems with this architecture style, the UIs should only be connected to each other with links for the desired true decoupling. An interesting approach is the use of Micro Frontends which can be integrated via Web Components. Could the solutions make use of any number of technologies, which are Frontend frameworks like React, Vue, Svelte and their different versions? Which are best practices and practical techniques to accomplish Micro Frontends”integration and communication?.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Chapter 2
-\chapter{Basics of Micro Frontends }
+%% New Chapter 
+\chapter{Software Architecture and Microservices}
+This chapter provides a theoretical base of software architecture, major ideas, principles and characteristics of Microservices for the research.
 \section{Software architecture}
+Software architecture refers to the fundamental structure of a software system, a broad agreement on the software's key principles and according to Martin Fowler \cite{SA}, architecture is about the important stuff. Architecture is crucial for developer's understanding of the system, ongoing maintenance jobs,  and high-quality deliveries of the product. As for the web, recent history has witnessed inventions and discoveries leading to great changes in the way developers think about software in tech industry.
 \subsection{Web Application Layer}
+At its heart, a web application evolves around information. The information are stored in database layer, consisting of usually relational database management system,  for optimal reading, writing and persisting data. The data are managed, queried and updated by the second backend layer, a server-side application handling network requests, executing business, domain logic, and populating views sent back to the client. The Frontend, or presentation layer, consisting of HTML pages and JavaScript for rich UI, is the user-facing interface and interacts with the client users. Changes such as input from users, form submit or business use cases are persisted throughout backend and database layer, and updated on the Frontend. 
+\begin{figure}
+    \centering
+    \includegraphics[height=6cm]{app-layer.png}
+    \caption{Web Application Architecture of an e-commerce site \cite{micro-frontends.org}}
+    \label{fig:my_label}
+\end{figure}
+
 \subsection{Monolith}
-\subsection{Backend and Frontend}
-\subsection{Microservices and Frontend}
+
+At the bright dawn of digital revolution, monolith was the original way of developing software. A monolith is an application in which database, server-side application and client-side user interface are built as a single unit, is collectively owned by a handful of teams for development and deployment, and is composed of coupling layers, even subsystems which have complex inter-dependencies. In other words, a system with parts tightly coupled and released together is the definition of a monolith. Technologically, these components function on the same resource such as platform, language, libraries, common communication patterns within the same environment.
+\\ \\ 
+Monolith architecture is the natural approach to build a system. Essentially, the whole application logic and presentation including handling HTTP resource API, processing user interface or constructing deployment pipeline and testing scenarios, run in a single process. Consequently, changes are tied together, any change of the system, small or big, requires the entire application to be rebuilt and published. This phenomena has made it practically inconvenient to make changes and scale up development which requires greater resource. 
+\\ \\
+These frustrations gave rise to the separation of Backend and Frontend and later Microservices.
+
+\subsection{Separation of Backend and Frontend}
+
+Gradually, in place of a monolith that handles every thing, two central teams are formed around Backend and Frontend capabilities. Traditional approach tends to favor equipping a server performing most of rendering logic with a lightweight implementation of Frontend. 
+The emergence of JavaScript and AJAX made it possible for the client to be less dependent on the server and created asynchronous, dynamic behavior of the web. Since then, client machine beginning to possess greater computing power gives birth to user interaction advancement and rich user interface application. As for the Backend, the data boundary was provided and contained into the application programming interface (API) layer used for page generation or handling database queries. As for the Frontend, it is completely responsible for rendering UI, handling interactions and updating web pages with necessary resource and the term Single Page Application (SPA) was coined. In short, much of a web application functionalities moved to the client side.
+
 \section{Microservices}
-\subsection{Introduction to Microservices}
-\subsection{Establishment of Microservices}
-\subsection{Characteristics of Microservices}
-\subsection{When does Microservices make sense?}
-\section{Microservices}
-\subsection{Micro Frontends}
-\subsection{Establishment of Micro Frontends}
-\subsection{Design and Behavior}
-\subsection{Characteristics of Micro Frontends}
-\subsection{An example}
-\subsection{State of Micro Frontends}
- 
+
+\subsection{Establishment, Characteristics and Advantages of Microservices}
+As more applications are being deployed on the cloud and the tech industry becomes more dynamic with explosive innovation of computational technology, it is evident that modular structure and scaling development has now become to a certain extent universal, making it practical for applying micro architecture. In particular, some companies have been employing a systematic approach to carve up their applications into smaller parts, individual systems with independent development cycle, build process, release planning, and even internal architecture. In fact, it is more reasonable for solution architects to adopt the idea when it comes to considerable advantages of scaleup of parts of the system, parallel development and organization of business capabilities subject to frequent change. 
+\\ \\
+According to James Lewis and Martin Fowler \cite{Lew14}, 
+\begin{quote}
+    the Microservices architectural style is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independently deployable by fully automated deployment machinery. There is a bare minimum of centralized management of these services, which may be written in different programming languages and use different data storage technologies.
+\end{quote}
+
+The aim of Microservices is generally meant for systems come with size reasonably large enough, well-defined application and architectural boundaries \cite{BoundedContext} and skilful teams organized for distributed system. Significant drivers are project model with product mentality for an on-going relationship between developers and users and strong modularization through the pattern of change. \cite{Lew14}
+\\ \\
+Microservices has numerous characteristics. Of which, the worthiest being mentioned are decentralized development, strong modularization and technology diversity. \cite{Lew14, MTO} 
+\begin{quote}
+and desiring decentralized governance. 
+4 Products instead of projects
+5 Smaller teams pizza rule
+(Characteristics & Advantages)
+decentralized development: Independent deployment, upgrades, coordination/work, release plans, Organized around Business Capabilities, Decentralized Data Management, Decentralized Governance
+strong modularization: refenforce modules, Componentization via Services, less cognitive load
+technology diversity
+\end{quote}
+
+It is evident from the above interpretation that the idea of a micro ecosystem connecting individual services among a variety of business reasons does not only make significantly systematic shift in terms of decentralized governing model and strong module boundaries, but also offer the numerous opportunities for developers to control change without slowing down software's changes, take full responsibility for the software in production, and do rapid application deployment.
+
+\subsection{Downsides and Problems of Microservices}
+
+Commonly observed disadvantages of Microservices are associated complexities of distributed systems, multiple points of failure that result in higher chance of failure in run-time, increased orchestration complexity on system level, difficult management in case of a large number of services, difficulties in debugging and testing, and inconsistencies between services and versioning hell.
+\\ \\
+It is the multi-services architecture that enables application’s failure at multiple points, increases orchestration complexity and makes debugging and testing more difficult. In this case, determining root cause of an application crash, navigating buggy code and figuring out solutions to mitigate such situations require a lot more expertise and familiarity with the system. For instance, a developer needs to know which code resides in which repository, in which business domain a problem occurs or have excellent technical skills to handle failure of multiple dependent services. In another case, it is commonly observed that freedom of choice in technologies results in higher maintenance of much more frameworks and programming languages as well as difficulty in scaling development.
+
+\begin{quote}
+	Getting boundaries right
+Remote calls 
+Operational Complexity / Distributed system
+Eventual Consistency
+\end{quote}
+
+\chapter{Basics of Micro Frontends}
+\section{Micro Architecture on the Frontend and Common Problems of Micro Frontends}
+While much has been said on the Backend, micro architecture on Frontend appears to be at the outset. Micro Frontends, a term coined by ThoughtWorks describes a web application as a composition of features which are owned by independent teams. A team comes into contact with the product in production and customers, is cross-functional and owns the complete development cycle from database to user interface. All in all, self-contained systems come into being on the Frontend. \cite{micro-frontends.org}
+\\ \\
+Many may maintain that Micro Frontends solely and logically imply assembling HTML composed of different fragments from multiple Micro Frontends. However, what if the application needs to deliver assets such as JavaScript, CSS or image files? As for the JavaScript part, how can developers add dynamic behavior to web pages among different Micro Frontends? How does the application reflect desired changes in URLs path? What if two global variables in two Frontend code have the same name? As for the CSS part, what is the best style isolation technique? How should developers implement CSS scoping? How about responsive design? As for hypermedia contents, what does bundle splitting look like? How should the application deliver hypermedia contents? Ultimately, Micro Frontend projects should have the capabilities of delivering small chunks of data, fragments of HTML or UI components to the frontend without interrupting the main application.
+\\ \\
+In contrast to the backend, Micro Frontends have some more problems other than those from Microservices world. In the first place, performance considerations will caution corporates and companies against the adoption of Micro Frontends during the course of doing research and developing their products. In this case, the backend offers a variety of solutions to give every service extensive computing resource while all we have on the Frontend is the client machine for instance a desktop with great computing power or a small smartphone. Therefore, resource exhaustion is possible. Moreover, Micro Frontends requires not only code isolation but also sharing resources such as technology of choice and run-time framework. Micro Frontends should make style isolation possible to avoid style leaks, conflicts, and different CSS styles as well as HTML fragments translate into the final Document Object Model (DOM) \cite{DOM}.
+\\ \\
+The strength of Micro Frontends, universally clarified by strong modularization and great flexibility, will lead to a number of disadvantages in the way that micro architecture is realized, which is also the case of Microservices. Ultimately, the advantages of Micro Frontends as well as Microservices can significantly outweigh its disadvantages depending on each specific use case, not mentioning the available tooling, active community and best practices that come with it. 
+
+\section{Characteristics of Micro Frontends}
+componentization 
+Mission
+Cross functional teams
+upgrade, smaller teams with less complex, less coupling, independent deployment communication between Micro Frontends, decentralize decision, tech freedom, scale 
+more errors
+short decision-making processes 
+\section{An exemplary implementation}
+
+\begin{figure}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \includegraphics[height=6cm]{wireframe.png}
+    \caption{First look of the incomplete integration of Micro Frontends}
+    \label{fig:wireframe}
+\end{figure}
+
+The example consists of four teams. Each team has a separate mission. Team red is responsible for the overall product details page, team blue implements cart functionality and team yellow takes care of an artificial intelligence mechanism to recommend products for customers. In this case, the UI elements, or fragments from different Micro Frontends such as purchase button, recommendation products and further updates handling mechanism come from remote servers hosting them. Finally, all three Micro Frontends live in an application shell, the gateway entry to access the web application. The application shell is also a Micro Frontend, responsible for the overall design, general functionalities including navigation, header, menu items and footer.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Chapter 3
-\chapter{Micro Frontends Architecture}
+%% New Chapter 
+\chapter{Micro Frontends Application Architecture}
 Micro Frontends slice an application into smaller codebases and have them integrated into one final piece in production. Though monolith application has become the industry standard, dividing the application this way still offers remarkable benefits in terms of scaling frontend development, scalable organizations with teams and code maintenance or features extension ability. Following Micro Frontends approaches will help clarify the architecture’s nature.
 \section{Static versus Dynamic Micro Frontends}
-Static approach is, surprisingly, a fully static usage of Micro Frontends. It breaks down the application into several packages which are subsequently merged at build time. The obvious advantage the static approach enjoys is that all information is known at build time. All Micro Frontends are made available during build time by some static imports. This leads to capture of potential errors, deeper integrations with few runtime dependency and the assurance that we have a robust, working and executable code. The main disadvantage, also a characteristic, of a static approach is that changes in any part of a micro frontend, or package, requires a rebuild of the whole application, resulting in central and dependent deployments. “The primary use cases of static micro frontend solutions are slowly changing websites or smaller web applications. One example framework here is Bit.” \cite{Rap20}, \cite{Bit15}
-\\
-\\
-On the other hand, a dynamic approach leads to great changes in the development cycle. Of the most influential changes taking place in the application are those in Micro Frontends publishment to a source, their source updates and connecting an application to a Micro Frontend. This complexity and loose coupling are the underlying cause of a much more fragile application. Additional tooling and error boundary handling further increase the complexity on the infrastructure level. However, the dynamic approach starts to shine in the way that it selects and updates each Micro Frontend independently during run-time or on a per-request level without interrupting the main running application, hence giving the developers a lot of freedom. \textit{“The primary use cases of dynamic micro frontend solutions are personalized websites or larger web applications. One example framework here is Webpack's Module Federation. A bundler such as Webpack produces one or more JavaScript files for each micro frontend.”} \cite{Rap20} \cite{Webpack}
-\\
-\\
+Static approach is, surprisingly, a fully static usage of Micro Frontends. It breaks down the application into several packages which are subsequently merged at build time. The obvious advantage the static approach enjoys is that all information is known at build time. All Micro Frontends are made available during build time by some static imports. This leads to capture of potential errors, deeper integrations with few runtime dependency and the assurance that we have a robust, working and executable code. The main disadvantage, also a characteristic, of a static approach is that changes in any part of a micro frontend, or package, requires a rebuild of the whole application, resulting in central and dependent deployments. \cite{Rap20}
+\begin{quote}
+    \textit{“The primary use cases of static micro frontend solutions are slowly changing websites or smaller web applications. One example framework here is Bit \cite{Bit15}.” \cite{Rap20}}
+\end{quote}
+
+On the other hand, a dynamic approach leads to great changes in the development cycle. Of the most influential changes taking place in the application are those in Micro Frontends publishment to a source, their source updates and connecting an application to a Micro Frontend. This complexity and loose coupling are the underlying cause of a much more fragile application. Additional tooling and error boundary handling further increase the complexity on the infrastructure level. However, the dynamic approach starts to shine in the way that it selects and updates each Micro Frontend independently during run-time or on a per-request level without interrupting the main running application, hence giving the developers a lot of freedom. \cite{Rap20} 
+\begin{quote}
+\textit{“The primary use cases of dynamic micro frontend solutions are personalized websites or larger web applications. One example framework here is Webpack's Module Federation \cite{Webpack}. A bundler such as Webpack produces one or more JavaScript files for each micro frontend.”} \cite{Rap20}
+\end{quote}
+
 It’s evident from the above interpretation that the static approach has made it practically convenient for a Micro Frontends implementation which only requires some boilerplate code, no lengthy infrastructure configuration or sophisticated integration. In contrast, a dynamic approach will be of concern for their independence, flexibility and a lot of freedom at reasonable corresponding cost of difficult implementation. 
+\\ \\
 Looking at the matter from different angle, decision on final architecture solution can be made by considering the anticipated development team structure.
 \section{Horizontal- versus Vertical-composed Micro Frontends}
 Continually increasing the project's scope and team size have made it best practices for dividing the software in horizontal layers with a frontend team and one or more teams on the backend. In reality, Micro Frontends does not only mean an unchanged technology architecture but also an alternative organizational approach: dividing the application into vertical slices where each slice has a dedicated development cycle built from the database in the backend to the frontend user interface. Typical vertical approach offers remarkable benefits in terms of features development optimization, split of problem domain into smaller parts, and customer focus with respect to project management and organizational structure.
@@ -276,20 +364,24 @@ The following screenshot illustrates a typical horizontal approach:
     \centering
     \captionsetup{justification=centering}
     \includegraphics[width=10cm]{horizontal.png}
-    \caption{Horizontal teams}
+    \caption{Horizontal teams \cite{Rap20}}
     \label{fig:1}
 \end{figure}
 
-
-Software is divided into multiple pieces where every Micro Frontend is developed, tested and deployed in isolation like an isolated web application; and teams are formed around technical capabilities. Many maintain that focusing on providing ready-made pages by this structure is the best policy to reason with and picture the whole project. Besides, it is reasonable that a single page of the application with teams formed around technical or “horizontal” concerns like styling, forms, validation, pure API or operation teams will do justice in terms of technology specialty. However, what really matters is how well and to what extent a horizontal approach can scale. The answer is it is not the case: a horizontal approach does not advocate combining multiple Micro Frontends to reuse certain parts among one another. \textit{“The primary use cases of horizontal micro frontend solutions are content-heavy websites or single-use-case pages. One example framework here is Podium.”} \cite{Rap20}, \cite{Podium}
+Software is divided into multiple pieces where every Micro Frontend is developed, tested and deployed in isolation like an isolated web application; and teams are formed around technical capabilities. Many maintain that focusing on providing ready-made pages by this structure is the best policy to reason with and picture the whole project. Besides, it is reasonable that a single page of the application with teams formed around technical or “horizontal” concerns like styling, forms, validation, pure API or operation teams will do justice in terms of technology specialty. However, what really matters is how well and to what extent a horizontal approach can scale. The answer is it is not the case: a horizontal approach does not advocate combining multiple Micro Frontends to reuse certain parts among one another. \cite{Rap20}
+\begin{quote}
+    \textit{“The primary use cases of horizontal micro frontend solutions are content-heavy websites or single-use-case pages. One example framework here is Podium \cite{Podium}.”} \cite{Rap20}
+\end{quote}
 \\ 
 \\
-In contrast, with every Micro Frontend as well as team formed with respect to business functionality rather than technical capabilities, vertically arranged software systems have cross-functional teams implement their problems, tasks requiring only knowledge of a single subdomain and make them responsible for the complete software’s stack from top to bottom. Then, different Micro Frontends are assembled in the client’s browser to form a final web page and one system is owned by one team. Consequently, multiple Micro Frontends can be displayed on the same web page; one Micro Frontend can also serve as a web component extension inside others. The very first characteristic to clarify this nature lies in the way the teams develop, upgrade and extend features. For instance, when opting for a certain feature extension, the responsible team already has all the specialists it needs to accomplish the task without any advanced agreements with other front- or backend teams. In addition, code upgrades no longer remain problematic. Since each team owns its complete stack, they can independently decide for their software updates, technology switch, and resolve framework or dependency version. Moreover, teams acquire end-to-end ownership of everything they need to deliver value to customers, making user-centric design an integral part of vertical architecture. For example, every team encapsulates a product's feature, a customer journey or a single page of the application that end users see from ideation through to production and ships the feature directly to the customer, hence removing the need of pure frontend or operation teams. 
+In contrast, with every Micro Frontend as well as team formed with respect to business functionality rather than technical capabilities, vertically arranged software systems have cross-functional teams implement their problems, tasks requiring only knowledge of a single subdomain and make them responsible for the complete software’s stack from top to bottom. Then, different Micro Frontends are assembled in the client’s browser to form a final web page and one system is owned by one team. Consequently, multiple Micro Frontends can be displayed on the same web page; one Micro Frontend can also serve as a web component extension inside others. The very first characteristic to clarify this nature lies in the way the teams develop, upgrade and extend features. For instance, when opting for a certain feature extension, the responsible team already has all the specialists it needs to accomplish the task without any advanced agreements with other front- or backend teams. In addition, code upgrades no longer remain problematic. Since each team owns its complete stack, they can independently decide for their software updates, technology switch, and resolve framework or dependency version. Moreover, teams acquire end-to-end ownership of everything they need to deliver value to customers, making user-centric design an integral part of vertical architecture. For example, every team encapsulates a product's feature, a customer journey or a single page of the application that end users see from ideation through to production and ships the feature directly to the customer, hence removing the need of pure Frontend or operation teams. \cite{Gee20}
 \\
 \\
-One major drawback of a vertical approach is the strong impact on software developers. As the application is broken down in pieces, developers have to carry out debugging tasks of multiple Micro Frontends and may have trouble at visualizing the final product. In this case, providing a system that can be debugged and extended well is the most challenging task. \textit{“The primary use cases of vertical micro frontend solutions are large web applications and web portals. One example framework here is Piral.”} \cite{Rap20}, \cite{Piral}
-\\
-\\
+One major drawback of a vertical approach is the strong impact on software developers. As the application is broken down in pieces, developers have to carry out debugging tasks of multiple Micro Frontends and may have trouble at visualizing the final product. In this case, providing a system that can be debugged and extended well is the most challenging task. \cite{Rap20}
+\begin{quote}
+    \textit{“The primary use cases of vertical micro frontend solutions are large web applications and web portals. One example framework here is Piral \cite{Piral}.”} \cite{Rap20}
+\end{quote}
+
 The following screenshot illustrates a typical vertical approach:
 
 \begin{figure}[h!]
@@ -307,53 +399,60 @@ It is reasonably assumed that vertical-composed Micro Frontends has a crucial ro
 Micro Frontends differ from each other in build time, runtime, per-view, in-view, etc. among these properties, the typical factor that makes the most striking difference among them is the decision between backend and frontend as the area of composition. As a matter of fact, many nowadays like to see Micro Frontends as a real frontend game changer without any changes in the backend while others tend to stick to server-side-composed solution, enjoying a familiar architecture and transferable knowledge coming from Microservices world. 
 \\ 
 \\
-Server-Side Rendering (SSR) was the original technique for making dynamic websites possible. Naturally, server-side Micro Frontends were one of the first Micro Frontends implementations. The primary reason for this is that necessary technology has long existed, that is Server Side Includes (SSI) and its successor Edge Side Includes (ESI). The main advantage of backend-driven Micro Frontends is fast and seamless delivery of Micro Frontends in the context of server-to-server communication. In this case, the client browser receives ready-made webpages without additional integration and assembling technique. Moreover, this approach does not require JavaScript to be active on the client and is friendly for search engine and crawler. Finally, debugging is trouble-free, and developers might make use of existing Microservices infrastructure knowledge. The challenging task of a backend approach is building complicated infrastructure to help ensure scaling development and high reliability. One worth being mentioned point is that deployment takes place during build-time due to server-side rendering nature. \textit{“The primary use cases of backend micro frontend solutions are e-commerce websites and content portals. One example framework here is Mosaic 9.”} \cite{Rap20}, \cite{Zalando}
+Server-Side Rendering (SSR) was the original technique for making dynamic websites possible. Naturally, server-side Micro Frontends were one of the first Micro Frontends implementations. The primary reason for this is that necessary technology has long existed, that is Server Side Includes (SSI \cite{SSI}) and its successor Edge Side Includes (ESI \cite{ESI}). The main advantage of backend-driven Micro Frontends is fast and seamless delivery of Micro Frontends in the context of server-to-server communication. In this case, the client browser receives ready-made webpages without additional integration and assembling technique. Moreover, this approach does not require JavaScript to be active on the client and is friendly for search engine and crawler. Finally, debugging is trouble-free, and developers might make use of existing Microservices infrastructure knowledge. The challenging task of a backend approach is building complicated infrastructure to help ensure scaling development and high reliability. One worth being mentioned point is that deployment takes place during build-time due to server-side rendering nature. \cite{Rap20}
+\begin{quote}
+    \textit{“The primary use cases of backend micro frontend solutions are e-commerce websites and content portals. One example framework here is Mosaic 9 \cite{Zalando}.”} \cite{Rap20}
+\end{quote}
 \\ 
 \\
-On the other hand, many argue that it is the client-side micro frontends that can help developers accomplish the most flexibility. It is reasonable that any UI components and pages can be used regardless of framework, technology, server- or client-side strategy. However, this statement dwarfs the importance of employing backend that comes with some powerful capabilities of optimizations and enhancements. In this case, mixing some backend capabilities into the frontend may be a solution. The daunting task of this approach is performance consideration due to integration, composition and assembly of different Micro Frontends in the user’s browser. It always takes time to work and requires high technical expertise. \textit{“The primary use cases of frontend micro frontend solutions are tool-like experiences and web applications. One example framework here is Single-spa.”} \cite{Rap20}, \cite{SingleSPA}
-\\ 
-\\
-On balance, frontend-driven Micro Frontends have reinforced the advantages of being flexible and independent regardless of any chosen UI framework and rendering mechanism, even though backend Micro Frontends may exclusively allow a few great optimizations as well as enhancements by nature.
+On the other hand, many argue that it is the client-side micro frontends that can help developers accomplish the most flexibility. It is reasonable that any UI components and pages can be used regardless of framework, technology, server- or client-side strategy. However, this statement dwarfs the importance of employing backend that comes with some powerful capabilities of optimizations and enhancements. In this case, mixing some backend capabilities into the frontend may be a solution. The daunting task of this approach is performance consideration due to integration, composition and assembly of different Micro Frontends in the user’s browser. It always takes time to work and requires high technical expertise. \cite{Rap20}
+\begin{quote}
+    \textit{“The primary use cases of frontend micro frontend solutions are tool-like experiences and web applications. One example framework here is Single-spa \cite{SingleSPA}.”} \cite{Rap20}
+\end{quote}
+
+On balance, Frontend-driven Micro Frontends have reinforced the advantages of being flexible and independent regardless of any chosen UI framework and rendering mechanism, even though backend Micro Frontends may exclusively allow a few great optimizations as well as enhancements by nature.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Chapter 4
 \chapter{Micro Frontends Advantages and Disadvantages}
 \section{Advantages of Micro Frontends}
-\textbf{Advantages of microservices}
-\\ \\ 
+\subsection{Advantages of Microservices}
 Apart from those of Microservices, Micro Frontends come with many significant advantages.
-\\ \\ 
-\textbf{Decrease onboarding time}
-\\ \\ 
-Onboarding process should always take place whatever the cost. Onboarding new developers has become not only essential but also impacted productively on the overall progress of the project and required significant amount of enterprise resources in terms of time, money and manpower. 
+
+\subsection{Decrease on-boarding time}
+
+On-boarding process should always take place whatever the cost. Incorporating new developers has become not only essential but also impacted productively on the overall progress of the project and required significant amount of enterprise resources in terms of time, money and manpower. 
 \\ 
 \\
 \textit{“20 years ago, most developers that entered a company stayed for quite a while. Over time this decreased, to be around 2 years for most companies. If a standard developer gets productive in a larger code base after 6 months, this means that a large fraction of the investment (about 25\%) is not really fulfilled.  (https://hackerlife.co/blog/san-francisco-large-corporation-employee-tenure)”} \cite{Rap20}
 \\
 \\
-It is reasonable that with generally high hiring bar and often large codebase, incorporating new employees effectively and efficiently should be a realistic aim. Then, strong modularization with independent repositories in Micro Frontends helps decrease cognitive demand imposed on developers during onboarding process. Needless to say, for a new developer, working with a smaller repository assists them with the learning and comprehension of the whole project, bug fixing and troubleshooting of unusual situations. Besides, working with a smaller commit history in each repository lowers the entry level with continuously maintained and up to date documentation. 
+It is reasonable that with generally high hiring bar and often large code base, incorporating new employees effectively and efficiently should be a realistic aim. Then, strong modularization with independent repositories in Micro Frontends helps decrease cognitive demand imposed on developers during on-boarding process. Needless to say, for a new developer, working with a smaller repository assists them with the learning and comprehension of the whole project, bug fixing and troubleshooting of unusual situations. Besides, working with a smaller commit history in each repository lowers the entry level with continuously maintained and up to date documentation. 
+\\
+\\
+As for large monolith applications, according to James Lewis and Martin Fowler, they can be modularized around business capabilities as well. However, the whole system will turn out to be organized around too many contexts, hence making team members struggle to fit all of these into their short-term memory. In addition, the modularization strategy requires a great deal of discipline in the case of monolith while can be effectively enforced by componentization of services in a micro architecture design. \cite{Lew14}
 \\
 \\
 One worth mentioning pitfall is that complex bugs involved multiple points of failure scenario requires in-depth technical expertise to solve. Extensive experience with the system, being familiar with business use cases and knowing which code lives in which repository are the prerequisites for Micro Frontends debugging. Dividing teams with clear architectural boundaries, dedicated responsibilities and shared infrastructure knowledge can effectively solve this problem.
-\\ \\
-\textbf{Isolated features and optimization for feature development}
-\\ \\
+
+\subsection{Isolated features and optimization for feature development}
+
 The ability to ship independent features will help ensure that engineers develop features upon customer’s request in an optimal way. 
 \\ \\
 In the first place, using Micro Frontends will enable teams to roll out features progressively while any new extension in a layered architecture comes out as a result of an all-sided consideration, including a series of alignments, as complicated as how meetings are arranged, changes discussed, and specification written. In other words, only one team, instead of multiple teams, is involved in building a new feature, no communication or alignment is desired among different teams and there is no need for optimization or prioritization discussion.
 \\ \\
 Micro Frontends architecture turns out to be robust in this aspect of isolating different parts of the application where the application still technically works even though a Micro Frontend is shutdown. Consequently, this allows one Micro Frontend interchanges with another.
-\\ \\
-\textbf{Independent upgrades}
-\\ \\
-Since each team owns its complete stack, they can independently decide for their software updates, technology switch, and resolve framework or dependency version without coordination with other teams or with minor adjustment to inter-team conventions. As for monolith application, this switch is conducted on a much larger scale with higher risk of incompatibility and failure, significant expenses in terms of time and money, and lots of business and technical agreements. Micro Frontends slices the application into smaller chunks and makes it possible to evolve only a certain part of the software over time.
-\\ \\
-\textbf{Autonomous teams}
-\\ \\
+
+\subsection{Independent upgrades}
+
+Since each team owns its complete stack, they can independently decide for their software updates, technology switch, and resolve framework or dependency version without coordination with other teams or with minor adjustment to inter-team conventions. As for monolith application, this switch is conducted on a much larger scale with higher risk of incompatibility and failure, significant expenses in terms of time and money, and lots of business and technical agreements. Micro Frontends slices the application into smaller chunks and makes it possible for a certain part of the software evolve over time.
+
+\subsection{Autonomous teams}
+
 In the context of Micro Frontends, autonomous teams help achieve three important goals.
 \\ \\
-Firstly, one system is owned by one team. During the course of development, teams come up with ideas and implement actively, respond swiftly in unexpected situations and circumstances, and learn to be committed to themselves and their own actions regarding their independent tasks. This leads to more straight-forward teamwork and in turn, cuts out the need for central backend or frontend teams. One worth mentioning point is that for instance, a vertical architecture with the introduction of full-stack teams covering one backend service and one frontend module can prove to be good design for establishing clear architectural boundaries and domain driven design [Ref]. The beauty of this approach is strong modularization of the system, avoidance of the infamous spaghetti code, decrease in cognitive load of code for programmer and in alignment requirements among teams.
+Firstly, one system is owned by one team. During the course of development, teams come up with ideas and implement actively, respond swiftly in unexpected situations and circumstances, and learn to be committed to themselves and their own actions regarding their independent tasks. This leads to more straight-forward teamwork and in turn, cuts out the need for central Backend or Frontend teams. One worth mentioning point is that for instance, a vertical architecture with the introduction of full-stack teams covering one backend service and one Frontend module can prove to be good design for establishing clear architectural boundaries and domain driven design \cite{DDD}. The beauty of this approach is strong modularization of the system, avoidance of the infamous spaghetti code, decrease in cognitive load of code for programmer and in alignment requirements among teams.
 \\ \\
 Secondly, in production, each system can function when the neighboring systems are down. Each subsystem can maintain its own data, hence remove the need of further communication on system-to-system level or exchange of API requests.
 \\ \\
@@ -361,59 +460,279 @@ Thirdly, facing such emergent problems as developing new features quickly upon c
 \clearpage
 \begin{figure}
     \centering
-    \includegraphics{autonomous.png}
-    \caption{\cite{Gee20}}
+    \includegraphics[height=7cm]{autonomous.png}
+    \caption{Autonomous full-stack teams \cite{Gee20}}
     \label{fig:my_label}
 \end{figure}
+\subsection{Faster Time To Market}
+Micro Frontends architecture makes it much easier than ever for teams owning the complete life cycle of a product including development process, release schedule and customer collaboration. Products in place of projects forming a binding agreement with developers and user-centered design with customers gives faster time to market concerning business reasons. \cite{Rap20}
 
-\textbf{Faster TTM}
-\\ \\
-\textbf{A/B testing}
-\\ \\
-\section{Disadvantages and Common Problems of Micro Frontends}
-\subsection{Common problems of Micro Frontends}
-The strength of Micro Frontends, universally clarified by strong modularization and great flexibility, will lead to a number of disadvantages in the way that micro architecture is realized, which is also the case of Microservices. Ultimately, the advantages of Micro Frontends as well as Microservices can significantly outweigh its disadvantages depending on each specific use case, not mentioning the available tooling, active community and best practices that come with it. 
-\\ \\
-\textbf{Disadvantages of Microservices}
-\\ \\
-Commonly observed disadvantages of Microservices are associated complexities of distributed systems, multiple points of failure that result in higher chance of failure in runtime, increased orchestration complexity on system level, difficult management in case of a large number of services, difficulties in debugging and testing, and inconsistencies between services and versioning hell.
-\\ \\
-It is the multi-services architecture that enables application’s failure at multiple points, increases orchestration complexity and makes debugging and testing more difficult. In this case, determining root cause of an application crash, navigating buggy code and figuring out solutions to mitigate such situations require a lot more expertise and familiarity with the system. For instance, a developer needs to know which code resides in which repository, in which business domain a problem occurs or have excellent technical skills to handle failure of multiple dependent services. In another case, it is commonly observed that freedom of choice in technologies results in higher maintenance of much more frameworks and programming languages as well as difficulty in scaling development.
-\\ \\
-\textbf{Micro Frontends versus Microservices}
-\\ \\ 
-Many may maintain that Micro Frontends only means assembling HTML composed of different fragments from multiple Micro Frontends. However, what if the application needs to deliver assets such as JavaScript, CSS or image files? As for the JavaScript part, how can developers add dynamic behavior to webpages among different Micro Frontends? How does the application reflect desired changes in URLs path? What if two global variables in two frontend code have the same name? As for the CSS part, what is the best style isolation technique? How should developers implement CSS scoping? How about responsive design? As for hypermedia contents, what does bundle splitting look like? How should the application deliver hypermedia contents? Ultimately, Micro Frontend projects should have the capabilities of delivering small chunks of data, fragments of HTML or UI components to the frontend without interrupting the main application.
-\\ \\
-In contrast to the backend, Micro Frontends have some more problems other than those from Microservices world. In the first place, performance considerations will caution corporates and companies against the adoption of Micro Frontends during the course of doing research and developing their products. In this case, the backend offers a variety of solutions to give every service extensive computing resource while all we have on the frontend is the client machine for instance a desktop with great computing power or a small smartphone. Therefore, resource exhaustion is possible. Moreover, Micro Frontends requires not only code isolation but also sharing resources such as technology of choice and runtime framework. Micro Frontends should make style isolation possible to avoid style leaks, conflicts, and different CSS styles as well as HTML fragments translate into the final Document Object Model (DOM) [Ref].
+\subsection{A/B Testing}
+Modularization architecture has made it practically convenient for A/B testing scenario, greatly facilitating  user research process. In this case, only certain parts of the application are informed about changes to reorganize their structure, activate and switch specific features for user feedback gathering while in a monolith, code changes may occur repeatedly and scatteredly across the software. \cite{Rap20}
 
-\subsection{Disadvantages of Micro Frontends }
-\textbf{Web performance}
-\\ \\ 
+\section{Disadvantages of Micro Frontends}
+
+\subsection{Web performance}
+ 
 Assembling webpages, HTML fragments and UI components from multiple teams end up in more frontend code users need to download. A universal pattern of lazy loading and sharing dependencies should be applied to avoid downloading still unused resource and reduce redundancy without introducing tight coupling between teams. 
-\\ \\ 
-\textbf{More code in the frontend}
-\\ \\ 
+
+\subsection{More code in the frontend}
+
 Micro Frontends based websites typically introduce redundancy since for instance, isolated UI components will require more JavaScript and separate styling CSS code.
-\\ \\
-\textbf{Redundancy}
-\\ \\
+
+\subsection{Redundancy}
+
 Multiple teams always mean collective redundancy. Every team takes care of their own stack including setting up application server, maintaining build process and probably shipping duplicate scripts, styling to the browser. Moreover, developers will find it hard to synchronize with each other in exchanging best practices, knowledge or troubleshooting. For instance, a security breach is discovered in a hugely popular library makes it a practical reason for development teams to all fix and update their source themselves as this bug cannot be fixed centrally in a distributed system. Additionally, if one team mange to optimize their build process for rapid execution with less resources, they have to share this information with other teams so that they can repeat the process in their settings to gain from the enhancement. Practically, impacts created by independent teamwork and inter-team decoupling play a greater part in building products than do these costs associated with redundancy.
-\\ \\
-\textbf{Consistency}
-\\ \\ 
-In the settings of distributed system and independent databases, problems arise when one team needs to request data from another. One common use case is e-commerce site where products are the data which are shared universally, often replicated using an event bus or a feed system among different services. As a result, each service possesses its local storage of shared data.
-\\ \\ 
-\textit{
-“This architecture requires all teams to have their own database to be fully independent. But sometimes one team needs data that another team owns. In an online store, the product is a good example of this. All teams need to know what products the shop offers. A typical solution for this is data replication using an event bus or a feed system. One team owns the product data. The other teams replicate that data regularly. When one team goes down, the other teams are not affected and still have access to their local representation of the data. But these replication mechanisms take time and introduce latency. Thus, changes in price or availability might be inconsistent for brief periods of time. A promoted product with a discount on the homepage might not have this discount in the shopping cart. When everything works as expected, we are talking about delays in the region of milliseconds or seconds, but when something goes wrong, this duration can be longer. It’s a trade-off that favors robustness over guaranteed consistency.”
-}
-\\ \\
-\textbf{Heterogeneity}
-\\ \\ 
-When all teams opt for the same stack, communication pattern is less of a hassle, developers can switch teams occasionally, and exchanging knowledge is straight forward. If freedom of technologies leads to practical usage of different frontend frameworks and tools, all previously mentioned points are hard to keep. Final assessment and evaluation depend on each use case.
+
+\subsection{Consistency}
+ 
+In the settings of distributed system and independent databases, problems arise when one team needs to request data from another. One common use case is e-commerce site where products are the data which are shared universally, often replicated using an event bus or a feed system among different services. Each service possesses its local storage of shared data. Data replication scenario draws attention for some issues such as considerable latency when a service is down and guaranteed consistency of data.
+
+\subsection{Heterogeneity}
+
+When all teams opt for the same stack, communication pattern is less of a hassle, developers can switch teams occasionally, and exchanging knowledge is straight forward. If freedom of technologies leads to practical usage of different frontend frameworks and tools, all previously mentioned points are hard to keep. Final assessment and evaluation depend on each and every individual case.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% New Chapter 
-\chapter{Micro Frontends Sample Application}
+
+\chapter{Client-side Composition Micro Frontends with Web Components}
+\section{Basics of Client-side Composition}
+\section{Advantages and Disadvantages of Client-side Composition}
+\section{Introduction to Web Components}
+\section{Client-side Composition Implementation with Web Components}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Chapter 5
+\chapter{Siteless UI Micro Frontends with Piral}
+Siteless UI is the official term and name chosen by Smapiot \cite{Piral} referring to vertical-composed Micro Frontends. The final solution is Piral, a framework suitable for building portal application. \cite{Piral}.
+\section{Basics of Siteless UI Micro Frontends }
+Siteless UI uses a plugin architecture [Ref] with characteristics of flexibility and consistency and provides run-time-drive Micro Frontends. At its heart, Siteless UI uses an app-shell as the gateway to the application and orchestrate the whole communications, activities and interactions of other Micro Frontends. Optimally, the app-shell should not know how to resolve the Micro Frontends, instead it delegates this task to a dedicated service to load these Micro Frontends. The integration of each module is encapsulated in each Micro Frontend. 
+\\ \\ 
+Let’s take a look at the architecture of Piral framework as a siteless UI pattern:
+\begin{figure}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \includegraphics[height=6cm]{siteles-ui-pattern-diagram.png}
+    \caption{Siteless UI architecture \cite{Rap20}}
+    \label{fig:6}
+\end{figure}
+
+The most striking difference of this pattern is the distinct, independent feed server from all other modules used to discover the individual Micro Frontends. The app-shell loads, initialize (mount) and destroy (unmount) these modules and assemble them into the webpages. Further interactions will be passed down to each Micro Frontend and dedicated services. One worth mentioning point is that rather than being completely autonomous, the Micro Frontends all live in the context of the app-shell. In Piral plugin architecture, the whole life cycle of each service is realized by the setup of a plugin. In particular, each Micro Frontend exposes a setup function. For example, Micro Frontend \verb|pilet-recommendation| exposes its \verb|setup| function with \verb|app.registerExtension| for extension registration, that is provide a reusable UI component to others.
+\begin{lstlisting}{language=Python}
+import * as React from "react";
+import { PiletApi } from "app-shell";
+import { Recommendations } from "./components/Recommendations";
+
+interface RecommendationExtension {
+  // ...
+}
+
+export function setup(app: PiletApi) {
+  const emitEventData = (id) => {
+    // ...
+  };
+
+  app.registerExtension<RecommendationExtension>(
+    "recommendations",
+    ({ params }) => (
+      <Recommendations category={params.category} navigate={emitEventData} />
+    )
+  );
+}
+
+// ...
+\end{lstlisting}
+Every Micro Frontend exclusively provides their own integration. The app-shell reasonably provides dedicated functionalities and universal UI parts such as registration of navigation or main layout. During setup phase, apart from special works such as singleton components or shared dependencies, developers rarely see any interaction between Micro Frontends.
+\section{Advantages  of Siteless UI}
+Siteless UI offers an universal pattern to deliver micro applications with built-in API for crucial Micro Frontends functionalities, common interfaces for different modules,  user experience formed around the layouts, and great flexibility.
+
+\subsection{Developing locally}
+Local development has an positive impact on developer experience. Going for Siteless UI, without acquiring excessive support from a senior, understanding techniques to resolve different URLs or inject modules into a running instance in a special environment, a developer is able to clone the repository and start a local debugging session via \verb|piral debug| (Section \ref{Software Installation} and  emulator package (\url{https://docs.piral.io/reference/documentation/emulator}).
+
+\subsection{Publishing modules}
+DevOps landscape continually adopts new ways of deploying application. Siteless UI goes for application delivery in a form of zipped tarball or tar files, using \verb|tgz| extension. Its distinctive benefit is the format's adoption by \verb|npm| tool, one of the most important tooling. furthermore, in the case of Piral, it goes with an mature implementation of feed server for hosting Micro Frontends pieces. Developers can quickly use, deploy and test their applications, especially for the purpose of evaluating Micro Frontends solution or trying out a proof of concept.
+\subsection{A run-time is out of the box}
+A run-time has a crucial role in local development as well as in production. It orchestrate the application and takes care of aspects like automatic provisioning, caching rules and run-time optimizations. Piral framework providing this technical solution makes it easier for development process and developers focus on the actual use cases.
+
+\subsection{Development Cycle}
+More details development cycle is at Section \cite{Evaluation of Sample Applications}
+
+\subsection{Implementing framework-agnostic components}
+
+\section{Disadvantages of Siteless UI}
+
+Siteless UI is hard to debug while monolith comes with great debugging tools, not mentioning development difficulties. The trouble lies in proper setup, local development. It requires special development mode on a live instance or even with modules in production environment.
+\\ \\ 
+This pattern leads to a strong coupling between the app-shell and other modules. The worse will become the worst when changes in the APIs are not informed to the consumers and problems will not arise until the deployment of app-shell, as the system is composited at run-time and developers easily neglect the matter during compile time.
+\\ \\
+Due to its nature, client-side composition or Siteless UI is the most difficult framework to render on server, hence unfit for information-driven sites such as e-commerce or newspaper. Its primary use case is large interactive system and web portals.
+
+\section{Introduction to Piral } \label{Introduction to Piral}
+\subsection{What is Piral?}
+Piral is a development framework, built on React, Typescript and Node.js for building Micro Frontends solutions. As a framework, Piral provides framework for distributed web applications with modularized structure, a collection of libraries covering a wide variety of features and a suite of developer tools helping to develop, update and deploy code.
+
+\subsection{Piral Technologies}
+
+\begin{figure}[h!]
+  \centering
+  \captionsetup{justification=centering}
+  \includegraphics[height=8cm]{piral-building-blocks.png}
+  \caption{Piral building blocks}
+  \url{https://docs.piral.io/reference/documentation/architecture}
+  \label{fig:piral-standard}
+\end{figure}
+
+\begin{quote}
+\textit{
+    Piral does not start from zero. The stack that is used by Piral is React-based. Nevertheless, the API supports any kind of framework, as long as it can work with an arbitrary element to render it into. Piral itself is based on React and its eco-system, e.g., React DOM (to render on a website), React Router (for routing), React Atom (global state management using React.Context) and a React independent building block Piral Base (which allows loading modules at runtime).
+}
+(\url{https://docs.piral.io/reference/documentation/architecture})
+\end{quote} 
+\subsection{Piral Concepts}
+\subsubsection{Piral instance, application shell or app-shell}
+
+An application shell is the entry point of the whole application, structures basic layout (including header, navigation, footer, etc.), hosts shared components, and define loading and integration process of Micro Frontends (Pilets).
+
+\begin{quote}
+    \textit{A Piral instance builds the application shell and as such the foundation for executing pilets. All central and shared functions like layout, navigation menus or notification handling will be configured in the Piral instance.
+\\ \\ 
+In the end, the app shell is the foundation for the whole frontend. In the diagram below we see that the app shell is the top layer, which may (later on) hold other shared libraries or the shared UI components. The modules are then built later.} 
+\end{quote}
+
+\begin{figure}[h!]
+  \centering
+  \captionsetup{justification=centering}
+  \includegraphics[height=6cm]{modularization-web-app.png}
+  \caption{Distributed web applicaton}
+  \url{https://docs.piral.io/guidelines/tutorials/02-getting-started }
+  \label{fig:7}
+\end{figure}
+
+\subsubsection{Pilets, feature modules or Micro Frontends entities }
+
+Pilets are the Micro Frontends responsible for their functionalities, use cases, etc., including their own assets and dedicated dependencies, and provide their components to the app-shell or use available components given by the app-shell.
+
+\subsubsection{Pilet Setup Function}
+
+\begin{quote}
+\textit{There is a single function, which controls the configuration of a pilet - it is the setup method in the file \verb|./src/index.tsx|. The scaffolding process will add the setup function with some configurations:}
+\end{quote}
+\begin{lstlisting}[language=Python]
+export function setup(app: PiletApi) {
+  app.showNotification('Hello from Piral!');
+  app.registerMenu(() =>
+    <a href="https://docs.piral.io" target="_blank">Documentation</a>);
+  app.registerTile(() => <div>Welcome to Piral!</div>, {
+    initialColumns: 2,
+    initialRows: 1,
+  });
+}
+\end{lstlisting}
+\begin{quote}
+\textit{The PiralApi provides a series of useful methods for setting up and configuring a pilet. For example, the scaffolding registers with the method registerTile a tile for the dashboard and a menu entry with the method registerMenu.}
+\end{quote}
+\begin{figure}[h!]
+  \centering
+  \captionsetup{justification=centering}
+  \includegraphics[height=6cm]{piral-standard-api.png}
+  \caption{Piral standard API}
+  \url{https://docs.piral.io/reference/documentation/architecture}
+  \label{fig:piral-standard}
+\end{figure}
+
+\subsubsection{Pilet Feed Service }
+\\ \\
+The Pilets, or different Micro Frontends can be published to a common feed called Pilet Feed Service, from which the application can load modules into the local development for developing and testing purpose as well as into production.
+\\ \\
+In this case, the web application including the app-shell and Pilets can be debugged in the emulator on development machine. All steps are built-in and made available in Piral with dedicated tooling as well as documentation.
+\\ \\
+The following diagram illustrates the overall workflow of setup process in Piral:
+\clearpage
+\begin{figure}[h!]
+  \centering
+  \captionsetup{justification=centering}
+  \includegraphics[height=6cm]{piral-setup.png}
+  \caption{Piral workflow}
+  \label{fig:piral-setup}
+\end{figure}
+
+\section{Siteless UI implementations with Piral}
+The primary trait of client-side composition Micro Frontends is the requirement of an application shell to bootstrap and assemble the whole application in the browser. There are, essentially, three issues to deal with: routing mechanism for activating pages, sharing dependencies and sharing components for instance UI extensions or global state. 
+
+\subsection{Pilets details}
+
+\begin{table}[h!]
+    \captionsetup{justification=centering}
+    \caption{The Pilets and their fragments}
+    \label{tab:example_1}
+    \centering
+    \begin{tabular}{l | cc}
+	\toprule
+			\textbf{Pilet} & \textbf{Frontend Fragments}\\
+	\midrule
+	\textbf app-shell & 1) Overall layout 2) Header 3) Menu items 	\\
+	\textbf pilet-products              & 1) ProductsPage (page/component) 2) ProductDetailsPage(page/component)\\
+	\textbf pilet-recommendation             & 1) Recommendations (component extension)\\
+	\textbf pilet-carts              & 1) BuyButton (component extension) 2) CartPage (page)\\
+	\bottomrule
+    \end{tabular}
+\end{table}
+
+% \begin{table}[!ht]
+%     \centering
+%     \begin{threeparttable}
+% 	\captionsetup{font=normalsize,labelfont=bf,labelsep=period}
+% 	\caption{Table two's caption goes above.}
+% 	\label{tab:example2}
+% 	\normalsize
+%     \label{tab:example_2}
+%     \begin{tabular}[c]{l | cc || cc}
+% 	\toprule
+% 			& \multicolumn{2}{c ||}{\textbf{Main Header 1\tnote{a}}} & \multicolumn{2}{c}{\textbf{Main Header 2\tnote{b}}}\\
+% 			& \textbf{Subheader $\alpha$} & \textbf{Subheader $\beta$} & \textbf{Subheader $\gamma$} & \textbf{Subheader $\zeta$}\\
+% 	\midrule
+% 	\textbf{Item 1} & 1.0 & 2.0 & 3.0 & 4.0\\
+% 	\textbf{Item 2} & 1.1 & 2.1\\
+% 	\\
+% 			& \multicolumn{2}{c ||}{\textbf{Main Header 3}} & \multicolumn{2}{c}{\textbf{Main Header 4}}\\
+% 			& \textbf{Subheader $\alpha$} & \textbf{Subheader $\beta$} & \textbf{Subheader $\gamma$} & \textbf{Subheader $\zeta$}\\
+% 	\midrule
+% 	\textbf{Item 3} & 1.2 & 2.2 & 3.2 & 4.2\\
+% 	\textbf{Item 4} & 1.3 & 2.3\\
+% 	\bottomrule
+%     \end{tabular}
+% 	\begin{tablenotes}
+% 	    %\footnotesize
+% 	    \item[a] Footnote one goes here.
+% 	    \item[b] Footnote two goes here.
+% 	\end{tablenotes}
+%     \end{threeparttable}
+% \end{table}
+
+
+\subsection{Activating pages, client-side routing}
+
+Refer to section \ref{Integration with Pira}
+ 
+\subsection{Sharing dependencies}
+
+Refer to section \ref{Integration with Pira}
+
+\subsection{Using cross-framework components}
+
+Refer to section \ref{Integration with Pira}
+
+\subsection{Communication patterns}
+
+Refer to section \ref{Integration with Pira}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  New Chapter
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New chapter
+\chapter{Micro Frontends Sample Application} \label{Micro Frontends Sample Application}
 A walk-through of a simple Web shop system built using Piral. 
 \section{Introduction to Wild Orchard Store}
 
@@ -487,7 +806,7 @@ To illustrate the techniques of Micro Frontends, the site will be built in three
     \item Add a product to cart/ Click buy button: when users click buy button, the cart menu item is updated, if users moves to cart page, the saved cart data are showed
 \end{itemize}
 
-\section{Piral Application} \label{Piral Application}
+\section{Piral Sample Application Walk-through} \label{Piral Application}
 \subsection{Software Description}
 The Wild Orchard Store has four repositories:
 \begin{itemize}
@@ -508,7 +827,7 @@ All three Pilets are published on Piral Cloud Service \url{https://portal.piral.
 \subsection{Software Documentaion}
 The repository was shared and uploaded on Github. As part of the thesis, a dedicated public Github monorepository was created and accessible on \url{https://github.com/namphuong2217/micro-frontends-webshop-piral-sample}
 
-\subsection{Software Installation}
+\subsection{Software Installation} \label{Software Installation}
 
 \begin{lstlisting}[caption={Installation step by step (\url{https://docs.piral.io/guidelines/tutorials/02-getting-started})}]
 # Install the Piral CLI
@@ -517,12 +836,13 @@ npm i piral-cli -g
 piral --version
 # clone repository
 git clone https://github.com/namphuong2217/micro-frontends-webshop-piral-sample
-# starting app-shell
+# change to app-shell directory
 cd app-shell
+# starting app-shell
 piral debug 
 \end{lstlisting}
 
-\subsection{Architecture Diagram}
+\subsection{Architecture Diagram of the Sample Application}
 \clearpage
 \begin{figure}[ht!]
   \centering
@@ -532,8 +852,6 @@ piral debug
   \label{fig:piral-architecture-diagram}
 \end{figure}
 The app-shell is the gateway of the application. App-shell initially and consequently uses, loads and updates different Micro Frontends parts, they are \verb|pilet-products, pilet-recommendation and pilet-carts|.
-\\ \\
-Internally, Piral uses React as Frontend framework. All four repositories are written in React. \cite{React} The feed service is based on Piral Cloud Service (\ref{Introduction to Piral}).
 
 \subsection{Results}
 
@@ -544,7 +862,7 @@ Internally, Piral uses React as Frontend framework. All four repositories are wr
     \centering
     \begin{tabular}{l | cc}
 	\toprule
-			\textbf{Pilet} & \textbf{Frontend Fragments}\\
+			\textbf{Pilet} & \textbf{Pilet's area}\\
 	\midrule
 	\textbf app-shell & container and navigation with menu items\\
 	\textbf pilet-products              & marked with red border\\
@@ -613,19 +931,19 @@ Internally, Piral uses React as Frontend framework. All four repositories are wr
     \subfloat[Purchase another product]{\includegraphics[width=0.4\hsize]{cj-third-3.png}}
     % \hspace*{0.1\hsize}
     \subfloat[Navigate to cart page]{\includegraphics[width=0.4\hsize]{cj-third-4.png}}
-    \caption{Customer Journey of 3. Use Case}
+    \caption{Customer Journey of 3. Use Case (cont)}
     \label{Customer Journey of 3. Use Case}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% New chapter
-\chapter{Micro Frontends Implementations}
-\section{Micro Frontends Integration}
-\subsection{The simplest approach of Micro Frontends: Link and iframe}
-\\ \\ 
-A simple and intuitive strategy of implementing Micro Frontends is page-to-page transition via link and composition of fragments using iframe.
+%% Chapter 5
+\chapter{Micro Frontends Implementations} \label{Micro Frontends Implementations}
+This chapter examines Micro Frontends in greater detail.
+\section{Micro Frontends Integration} 
+\subsection{Link and iframe}
+A simple and intuitive strategy of implementing Micro Frontends is page-to-page transition via link and composition of fragments using iframe \cite{iframe}.
 \\ \\
-As for link transition, firstly, the single coupling between teams is the knowledge of other teams’ URL pattern. For instance, a team need only know the exact URL path to a Micro Frontend and hard code it to its webpage to make the integration work via a simple click from client. Secondly, link transition meets the expectation of high robustness and low coupling. For instance, if a Micro Frontend goes down, other parts in the whole application still works. In other words, the web application shares nothing. A Micro Frontend has everything it needs to fulfill its task regardless of technical frameworks, programming languages and deployment strategy other teams use or any error they cause.
+As for link transition, firstly, the single coupling between teams is the knowledge of other teams’ URL pattern. For instance, a team need only know the exact URL path to a Micro Frontend and hard code it to its web page to make the integration work via a simple click from client. Secondly, link transition meets the expectation of high robustness and low coupling. For instance, if a Micro Frontend goes down, other parts in the whole application still works. In other words, the web application shares nothing. A Micro Frontend has everything it needs to fulfill its task regardless of technical frameworks, programming languages and deployment strategy other teams use or any error they cause.
 \\ \\
 However, developers cannot embed a Micro Frontend into another, and more sophisticated integration techniques cannot be achieved using links. 
 \\ \\
@@ -633,8 +951,8 @@ As for iframe transition, it is possible to place one Micro Frontend inside anot
 \\ \\
 However, iframe integration is a document-in-document or websites-in-websites approach while direct assembling of HTML fragments is desired in most cases, which requires a Micro Frontend to provide or expose snippet of HTML or valid Web Components later translated into DOM elements within the final DOM context. Iframe also has some major        disadvantages. Firstly, the layout of an iframe’s content is fix and determined in advance. For example, the current host document needs to know the exact height of the including iframe’s content from a remote Micro Frontend. Moreover, responsive design is hard to achieve. In this case, the child iframe’s content has no way to responsively adjust height or width as its dimension is defined by the parent document. Teams end up with a more complicated technical agreements of not only the URLs but also CSS properties. Secondly, iframe is resource-intensive and leads to poor performance for the browser. The browser generates a new context with computing resource such as RAM and CPU for every iframe. Thirdly, iframe is bad for accessibility and search engines.
 
-\subsection{Integration with Piral}
-Readers might want to take a look at Piral in consequent section first (\ref{Introduction to Piral}).
+\subsection{Integration with Piral} \label{Integration with Pira}
+
 \subsubsection{Activating pages, client-side routing}
 One of the core features of Piral is routing. The app-shell assumes the task of determining what pages are shown based on the URLs path. Following figure illustrates the standard pattern of routing engines. The app or PiletAPI object is globally installed and used to register and unregister pages of all Micro Frontends. Consequently, URL changes are handled by routing engines. This enables orchestrating multiple pages from one or multiple Micro Frontends in the application.
 \begin{figure}[h!]
@@ -647,9 +965,9 @@ One of the core features of Piral is routing. The app-shell assumes the task of 
 
 In Piral, each module carries out the page registration step itself via \verb|app.registerPage| and \verb|app.unregisterPage| functions. This takes place within the exposed setup function of each Pilets, often in the root config file \verb|index.tsx|.
 \\ \\
-Let’s look at an example of the config file \verb|index.tsx| in \verb|pilet-products|.
+Let’s look at an example of the config file \verb|index.tsx| in \verb|pilet-products (pilet-products\src\index.tsx)|.
 
-\begin{lstlisting}{language=Python}
+\begin{lstlisting}[caption={pilet-products index.tsx}]
 // ...
 import * as React from "react";
 import { Redirect } from "react-router-dom";
@@ -677,10 +995,10 @@ The PiletApi keeps track, orchestrate, and decide which Micro Frontend is curren
 \subsubsection{Extending, sharing components, or Piral extension}
 One of the selling points of Piral is Piral extension, that is using components provided by the Pilets. 
 \\ \\
-In the sample application, the product details page from \verb|pilet-products| has and use the buy button from \verb|pilet-carts|. The code looks like this:
-\\ \\
+In the sample application, the product details page from \verb|pilet-products| has and use the buy button from \verb|pilet-carts|. 
+\\ \\The code looks like this, in \verb|pilet-carts\src\index.tsx|:
 
-\begin{lstlisting}{language=Python, caption=pilet-carts extension}
+\begin{lstlisting}[caption={pilet-carts extension}]
   // ...
   import * as React from "react";
   import { Link } from "react-router-dom";
@@ -704,10 +1022,10 @@ In the sample application, the product details page from \verb|pilet-products| h
     // ...
   }
 \end{lstlisting}
-\verb|pilet-carts extension|
 
+The code look like this in \verb|pilet-products\src\index.tsx|:
 
-\begin{lstlisting}{language=Python, caption=Pilet-products uses extension}
+\begin{lstlisting}[caption={pilet-products uses pilet-carts extension}]
   // ...
 
 const ProductDetailsPage = React.lazy(
@@ -740,24 +1058,33 @@ export function setup(app: PiletApi) {
   // ...
   }
 \end{lstlisting}
-\verb|pilet-products uses extension|
+
 Here the \verb|pilet-carts| register an extension name \verb|buy-button| which hosts the \verb|Recommendation| React Component. In \verb|pilet-products|, the \verb|ProductDetailsPage| use the extension via \verb|piral.Extension| API. In this case, the \verb|piral.Extension| with name \verb|buy-button| is passed down to \verb|ProductDetailsPage| in the root config \verb|index.tsx| file. This approach decouples the actual React Component from Piral and improves readability and testability of the code; \verb|empty| property specifies the fallback element if the main application cannot resolve this extension.
 \\ \\ 
 Moreover, during registration step of a shared component, the name of the Micro Frontend producer need not be mentioned. Alternatively, developers can give the extension an appropriate name. As a result, the application and developers derive the name of an extension by its actual name, instead of directly referencing the name of responsible service.
+
+\begin{figure}[h!]
+  \centering
+  \captionsetup{justification=centering}
+  \includegraphics[height=6cm]{piral-extension-diagram.png}
+  \caption{The general flow for components extension \cite{Rap20}}
+  \label{fig:extension-diagram}
+\end{figure}
 
 \section{Communication Patterns}
 In many real-world applications, interaction is the norm. Hence, communication patterns are essential and required in most cases.
 \subsection{iFrame Communication}
 
-In the case of iframe, communication can take place between reusable frontend pieces by using the window.postMessage function since HTML5. The first characteristics of window.postMessage lies in the way that it only allows strings to be passed. It is obvious that true objects or JavaScript functions cannot be delivered even though strings can be translated into quite complex JSON-serialized objects. 
+In the case of iframe, according to Florian Rappl, communication can take place between reusable Frontend pieces by using the \verb|window.postMessage| function since \verb|HTML5|. The first characteristics of \verb|window.postMessage| lies in the way that it only allows strings to be passed. It is obvious that true objects or JavaScript functions cannot be delivered even though strings can be translated into quite complex \verb|JSON-serialized| objects. \cite{Rap20}
 
 \subsection{Piral Communication}
 \subsubsection{Top-down Communication}
-The first use case (\ref{User Stories and Use cases}) is governed by \verb|pilet-products|. In the current product details page, users can navigate and click around different categories of chosen tea, that is matcha, green tea leaves or spring tea series. Consequently, relevant sections, that is related products and buy button with price sections, are updated.
+The first use case (\ref{Customer Journey of 1. Use Case}) is governed by \verb|pilet-products|. In the current product details page, users can navigate and click around different categories of chosen tea, that is matcha, green tea leaves or spring tea series. Consequently, relevant sections, that is related products and buy button with price sections, are updated.
 \\ \\
 For instance, by clicking to the spring tea category, a new spring tea product page is loaded and the product recommendation section from \verb|pilet-recommendation| as well as buy button with price from \verb|pilet-carts| are updated accordingly. In this case, \verb|pilet-products| initialize a request, communicate new changes to and notify \verb|pilet-recommendation| and \verb|pilet-carts|, the two Pilets consumes these events.
-
-\begin{lstlisting}[caption={pilet-products ProductDetailsPage.tsx}]
+\\ \\
+The code look like this in \verb|pilet-products\src\components\ProductDetailsPage.tsx|:
+\begin{lstlisting}[caption={ProductDetailsPage passes product data directly to extended components}]
 import * as React from "react";
 import { History } from "history";
 import { products } from "../data/products";
@@ -811,10 +1138,11 @@ const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({
 In short, \verb|pilet-products| communicate and deliver requests to \verb|pilet-recommendation| and \verb|pilet-carts|, that is a top-down communication. 
 
 \subsubsection{Top-up Communication} 
-For the second use case (\ref{User Stories and Use cases}), in the first glance, this situation seems to be identical with the first one. The main difference is that browsing, clicking and navigating inside related products section involves another Micro Frontend, that is \verb|pilet-recommendation|. 
+For the second use case (\ref{Customer Journey of 2. Use Case}), in the first glance, this situation seems to be identical with the first one. The main difference is that browsing, clicking and navigating inside related products section involves another Micro Frontend, that is \verb|pilet-recommendation|. 
 
 For instance, when a user clicks to the \verb|AYR Red Powder| image, the current page is updated with information of the new product. In particular, there is no smooth and app-like experience like that of single page application rerouting like \verb|react-router-dom|, instead the browser refreshes the page with updated URL path. The reason for this is simple: \verb|pilet-recommendation| is a separate component and can only notify the \verb|pilet-products| to refresh the page for new contents. In fact, \verb|pilet-recommendation| emits an event with the desired product ID, \verb|pilet-products| listens to this event, receives the product ID from \verb|pilet-recommendation| and carries out the actual navigation on its own. In other words, \verb|pilet-recommendation| does not do the navigation itself, instead it delegates the task to \verb|pilet-products|. 
-
+\\ \\
+The code look like this in \verb|pilet-products\src\index.tsx|:
 \begin{lstlisting}[caption={pilet-products listens to custom event and carries out the navigation}]
   // ...
   // Event from Recommendation pilet
@@ -830,6 +1158,8 @@ For instance, when a user clicks to the \verb|AYR Red Powder| image, the current
   }
 \end{lstlisting}
 
+
+The code look like this in \verb|pilet-recommendation\src\index.tsx|:
 \begin{lstlisting}[caption={pilet-recommendation emits custom event and transmits the product Id}]
 import * as React from "react";
 import { PiletApi } from "app-shell";
@@ -875,11 +1205,11 @@ This case is a top up communication via events between Micro Frontends, from \ve
   \label{fig:piral-global-context-diagram}
 \end{figure}
 
-The last use case is cart function (\ref{User Stories and Use cases}). Users click to the buy button, the cart navigator on top-right corner is updated accordingly, and cart data can be seen on cart page.
+The last use case is cart function (\ref{Customer Journey of 3. Use Case}). Users click to the buy button, the cart navigator on top-right corner is updated accordingly, and cart data can be seen on cart page.
 \\ \\ 
 The use case essentially involves \verb|pilet-carts|, \verb|app-shel|l, and requires \verb|pilet-products|. When users click buy button, the products data are saved (in memory) and later can be retrieved on cart page. In this case, \verb|pilet-cart|s uses, updates and keep track of the state of cart data. The state of cart data basically lives in the app-shell and can be universally accessed by any one. It then updates the Cart menu item in app-shell every time new data arrives via Piral global state management mechanism. Eagle eye readers may notice that especially in the second use case, the cart data is reset. This is inevitable due to in memory storage and lack of proper and persistent state management. This is acceptable for the purpose of illustration.
-
-
+\\ \\
+The code look like this in \verb|pilet-carts\src\index.tsx|:
 \begin{lstlisting}[caption={pilet-carts handles cart data}]
 import * as React from "react";
 import { Link } from "react-router-dom";
@@ -921,9 +1251,10 @@ export function setup(app: PiletApi) {
 
 \end{lstlisting}
 
-
 \section{Lazy Loading}
 Instead of downloading all information on accessing a web application, a component is loaded at its first use case. Then, lazy loading reduces initial load time, reduces page weight leading to quicker page load time, and conserving bandwidth by avoiding requesting unused data and resources.
+\\ \\
+The code look like this in \verb|pilet-products\src\index.tsx|:
 \begin{lstlisting}[caption={Lazy loading of a React component in pilet-products index.tsx file}]
   // ...
 const ProductDetailsPage = React.lazy(
@@ -947,7 +1278,7 @@ export function setup(app: PiletApi) {
   // ...
   }
 \end{lstlisting}
-On initial load, user is navigated to list of all products page. Then, only when moving to product details page does the browser download the code for \verb|ProductDetailsPage| React component. Lazy loading is implemented via \verb|React.lazy()| in this case.
+On initial load, user is navigated to list of all products page. Then, only when moving to product details page does the browser download the code for \verb|ProductDetailsPage| React component. Lazy loading is implemented via \verb|React.lazy()|\cite{ReactLazy} in this case.
 
 \section{Dependencies Management}
 Sharing dependencies is an appropriate setting in Micro Frontends. In practice, developers can take either way of sharing dependencies: sharing no dependencies as it is the case in Microservices or sharing all inter-team dependencies. For getting best of both worlds, however, developers have to decide which dependencies to share.
@@ -1067,14 +1398,17 @@ Firstly, agreements, conventions and contracts need to be formed among teams. Fo
     \centering
     \captionsetup{justification=centering}
     \includegraphics[height=6cm]{knowledge-sharing-event.png}
-    \caption{Change of event's name}
+    \caption{Change of event's name \cite{Rap20}}
     \label{fig:5}
 \end{figure}
 Secondly, autonomy is good, productivity is better and communication factor plays an important role. Adopting shared load test [Ref] scenarios or picking a common error-logging infrastructure without reinventing the wheels should always be taken as a long-lasting productive method concerning high-quality, focused idea development, effective time management, and possible risk management. Transparent protocol for information exchange should be available in most cases.
 \\ \\
 Thirdly, ensuring visual consistency across Micro Frontends is vital for the final product. A style guide and design system including user interface like form, navigation, menu item, input field, button, icon or typography can be made public, accessible for ever party, serve as a guideline and reference for developers.
 
-\section{Cross-framework Web components}
+\section{Cross-framework Components}
+
+\\ \\
+Incompatible framework's version of components for instance \verb|vue@\^2.0.0| and \verb|vue@\^3.0.0| plays no role in this case, as long as the setup is properly handled.
 
 \section{Reliability}
 
@@ -1083,183 +1417,32 @@ Micro Frontends collects information including markup fragments, UI components a
 Established approach such as \textit{“set (very) small timeouts, introduce retries for critical requests and detect a connection loss and handle it gracefully”} \cite{Rap20} should be applied. Even though, developers need to handle exception and error properly. In this case, error boundary can be used. Prominent example is React Error Boundaries and Piral fallback mechanism. Furthermore, cancellation of a Micro Frontend or a service will support testing and help ensure scaling development and loose coupling.
 
 \section{Performance: Request optimizations}
-Micro Frontends leading to modularization calls developers’ attention to growing API requests as in place of a monolith, a much more fragmented system, both server- and client-side, comes into being. 
-A best practice to mitigate this effect is caching. 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Chapter 7
-% \chapter{Client-side Composition with Web Components}
-% \section{Basics of Client-side Composition}
-% \section{Basics of Web Components}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Chapter 7
-% \chapter{Client-side Composition Sample Application}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Chapter 7
-% \chapter{Dynamic Micro Frontends with Webpack}
-% \section{Basics of Dynamic Micro Frontends}
-% \section{Introduction to Webpack Module Federation}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Chapter 8
-% \chapter{Webpack Module Federation Sample Application}
-% \section{Architecture Description}
-% \section{UML-Diagram and Bounded Context}
-% \section{The Final Sample Application}
-% \section{Process Workflows}
-% \section{Implementation Details}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Chapter 5
-\chapter{Siteless UI Micro Frontends with Piral}
-Siteless UI is the official term and name chosen by Smapiot \cite{Piral} refering to vertical-composed Micro Frontends. The final solution is Piral \cite{Piral}.
-\section{Basics of Siteless UI Micro Frontends }
-Siteless UI uses a plugin architecture [Ref] with characteristics of flexibility and consistency and provides runtime-drive Micro Frontends. At its heart, siteless UI uses an app-shell as the gateway to the application and orchestrate the whole communications, activities and interactions of other Micro Frontends. Optimally, the app-shell should not know how to resolve the Micro Frontends, instead it delegates this task to a dedicated service to load these Micro Frontends. The integration of each module is encapsulated in each Micro Frontend. 
-\\ \\ 
-Let’s take a look at the architecture of Piral framework as a siteless UI pattern:
-\begin{figure}[h!]
-    \centering
-    \captionsetup{justification=centering}
-    \includegraphics[height=6cm]{siteles-ui-pattern-diagram.png}
-    \caption{Siteless UI architecture}
-    \label{fig:6}
-\end{figure}
-
-The most striking difference of this pattern is the distinct, independent feed server from all other modules used to discover the individual Micro Frontends. The app-shell loads, initialize (mount) and destroy (unmount) these modules and assemble them into the webpages. Further interactions will be passed down to each Micro Frontend and dedicated services. One worth mentioning point is that rather than being completely autonomous, the Micro Frontends all live in the context of the app-shell. In Piral plugin architecture, the whole life cycle of each service is realized by the setup of a plugin. In particular, each Micro Frontend exposes a setup function. For example, Micro Frontend \verb|pilet-recommendation| exposes its \verb|setup| function with \verb|app.registerExtension| for extension registration, that is provide a reusable UI component to others.
-\begin{lstlisting}{language=Python}
-import * as React from "react";
-import { PiletApi } from "app-shell";
-import { Recommendations } from "./components/Recommendations";
-
-interface RecommendationExtension {
-  // ...
-}
-
-export function setup(app: PiletApi) {
-  const emitEventData = (id) => {
-    // ...
-  };
-
-  app.registerExtension<RecommendationExtension>(
-    "recommendations",
-    ({ params }) => (
-      <Recommendations category={params.category} navigate={emitEventData} />
-    )
-  );
-}
-
-// ...
-\end{lstlisting}
-Every Micro Frontend exclusively provides their own integration. The app-shell reasonably provides dedicated functionalities and universal UI parts such as registration of navigation or main layout. During setup phase, apart from special works such as singleton components or shared dependencies, developers rarely see any interaction between Micro Frontends.
-\section{Advantages and Disadvantages of Siteless UI}
-\textbf{Advantages}
-\\ \\
-Potentially, the greatest advantage of the siteless UI pattern is that it pretty much guarantees a consistent application out of the box. By providing an API to access essential app functionality, all modules need to go through the same interface. Naturally, the same patterns and practices are already fully determined at this boundary. The UX is formed around the layouts, which are then communicated properly via the API. Here, this architectural style really ties all micro frontends together without restricting their freedom too much.
-
-\subsection{Deployment}
-\subsection{Developing locally}
-\subsection{Publishing modules}
-\subsection{A runtime is out of the box}
-\subsection{Pilet development}
-\subsection{Implementing framework-agnostic components}
-
-\textbf{Disadvantages}
-\\ \\
-Siteless UI is hard to debug while monolith comes with great debugging tools, not mentioning development difficulties. The trouble lies in proper setup, local development. It requires special development mode on a live instance or even with \\ \\ 
-\textit{The greatest disadvantage of this pattern is the implied – and strong – dependency of the modules to the API provided by the app shell. If we just change one of the APIs, we might crash all modules using that API. Even worse, we might not even recognize this problem until we release the updated app shell. As the modules are deployed independently, the whole system only comes together at runtime. At compile time, such issues are not easy to spot and will usually be missed
-\\ \\ 
-In comparison to other micro frontend patterns, the SPA composition is one of the most – if not the most – difficult frameworks to render on the server. While this may not seem like a big deal (and usually it is not), under some circumstances we might find this to be a real issue. Almost certainly this excludes this pattern from information-heavy pages such as e-commerce websites or newspaper websites. In the end, the main targets for using the SPA composition pattern are applications or tools that require heavy interactivity, where the individual parts are either taken from existing applications using different frameworks, or it cannot be guaranteed that all parts will be written using the same frontend framework.
-}
-
-\section{Introduction to Piral } \label{Introduction to Piral}
-\subsection{What is Piral?}
-Piral is a development framework, built on React, Typescript and Node.js for building Micro Frontends solutions. As a framework, Piral provides framework for distributed web applications with modularized structure, a collection of libraries covering a wide variety of features and a suite of developer tools helping to develop, update and deploy code.
-\subsection{Piral Concepts}
-\textbf{Piral instance, application shell or app-shell}
-\\ \\
-An application shell is the entry point of the whole application, structures basic layout (including header, navigation, footer, etc.), hosts shared components, and define loading and integration process of Micro Frontends (Pilets).
-\\ \\
-\textit{“A Piral instance builds the application shell and as such the foundation for executing pilets. All central and shared functions like layout, navigation menus or notification handling will be configured in the Piral instance.
-\\ \\ 
-In the end, the app shell is the foundation for the whole frontend. In the diagram below we see that the app shell is the top layer, which may (later on) hold other shared libraries or the shared UI components. The modules are then built later.”}
-\begin{figure}[h!]
-  \centering
-  \captionsetup{justification=centering}
-  \includegraphics[height=6cm]{modularization-web-app.png}
-  \caption{Distributed web applicaton}
-  \url{https://docs.piral.io/guidelines/tutorials/02-getting-started }
-  \label{fig:7}
-\end{figure}
-\\ \\
-\textbf{Pilets, feature modules or Micro Frontends entities }
-\\ \\
-Pilets are the Micro Frontends responsible for their functionalities, use cases, etc., including their own assets and dedicated dependencies, and provide their components to the app-shell or use available components given by the app-shell.
-\\ \\
-\textbf{Pilet Setup Function}
-\\ \\
-\textit{“There is a single function, which controls the configuration of a pilet - it is the setup method in the file ./src/index.tsx. The scaffolding process will add the setup function with some configurations:}
-\begin{lstlisting}[language=Python]
-export function setup(app: PiletApi) {
-  app.showNotification('Hello from Piral!');
-  app.registerMenu(() =>
-    <a href="https://docs.piral.io" target="_blank">Documentation</a>);
-  app.registerTile(() => <div>Welcome to Piral!</div>, {
-    initialColumns: 2,
-    initialRows: 1,
-  });
-}
-\end{lstlisting}
-\textit{The PiralApi provides a series of useful methods for setting up and configuring a pilet. For example, the scaffolding registers with the method registerTile a tile for the dashboard and a menu entry with the method registerMenu.”}
-\\ \\
-\textbf{Pilet Feed Service }
-\\ \\
-The Pilets, or different Micro Frontends can be published to a common feed called Pilet Feed Service, from which the application can load modules into the local development for developing and testing purpose as well as into production.
-\\ \\
-The following diagram illustrates the overall workflow of setup process in Piral:
-\\ \\
-\begin{figure}[h!]
-  \centering
-  \captionsetup{justification=centering}
-  \includegraphics[height=6cm]{piral-setup.png}
-   \caption{Piral workflow}
-  \label{fig:8}
-\end{figure}
-\\ \\
-In this case, the web application including the app-shell and Pilets can be debugged in the emulator on development machine. All steps are built-in and made available in Piral with dedicated tooling as well as documentation.
-
-\subsection{Siteless UI implementations with Piral}
-The primary trait of client-side composition Micro Frontends is the requirement of an application shell to bootstrap and assemble the whole application in the browser. There are, essentially, three issues to deal with: routing mechanism for activating pages, sharing dependencies and sharing components for instance UI extensions or global state. 
-\\ \\ 
-\textbf{Activating pages, client-side routing}
-\\ \\ 
-Refer to section \ref{Integration with Piral}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Chapter 6
-\chapter{Piral Sample Application Implementation}
-\section{Sample Application in Details}
-\section{Implementation Details}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Chapter 9
-\chapter{Evaluation of Piral Sample Applications}
-\section{Setup}
+Micro Frontends leading to modularization calls developers’ attention to growing API requests as in place of a monolith, a much more fragmented system, both server- and client-side, comes into being. The sum total of HTTP requests increase as a consequence. If many modules query the same data, a best practice to mitigate this effect is micro-caching for API requests. 
+% \section{Security}
+\chapter{Evaluation of Sample Applications} \label{Evaluation of Sample Applications}
+This chapter contains technical evaluation of Web Components and Piral sample application
+\section{Developer Experience}
+\subsection{Setup}
+\subsection{Application Shell Development Cycle}
+\subsection{Pilets Development Cycle}
+\section{Testing}
 \section{Performance }
 Time to first byte, bundle size, \url{https://web.dev/vitals/}
 \section{Cancellation of a Micro Frontend Service}
 \section{Exchange of Cross-framework Components}
-\section{Consistency, Robustness and Reliability}
-\section{Pros and Cons}
-\section{Common Challenges and Pitfalls}
+% \section{Consistency}
+\section{Robustness, Reliability and Error handling}
+
+Design for failure
+A consequence of using services as components, is that applications need to be designed so that they can tolerate the failure of services. Any service call could fail due to unavailability of the supplier, the client has to respond to this as gracefully as possible. This is a disadvantage compared to a monolithic design as it introduces additional complexity to handle it. The consequence is that microservice teams constantly reflect on how service failures affect the user experience. Netflix's Simian Army induces failures of services and even datacenters during the working day to test both the application's resilience and monitoring.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Chapter 10
-\chapter{Developer Experience}
-
+% \chapter{Developer Experience}
+% This chapter further analyze and evaluate developer experience in Micro Frontends with vertical software architecture
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Chapter 11
+
 \chapter{Summary and Conclusion}
 \cite{Gee20}
 \cite{Rap20}

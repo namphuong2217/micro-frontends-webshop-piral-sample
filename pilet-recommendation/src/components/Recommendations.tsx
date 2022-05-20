@@ -18,19 +18,17 @@ export const Recommendations: React.FC<RecommendationsProps> = ({
     <div className="green-recos" id="reco">
       <h3>Related Products</h3>
       {recommendations.map((recommendationProduct) => (
-        <>
-          <button
+        <button
+          key={recommendationProduct.id}
+          type="button"
+          onClick={() => navigate(recommendationProduct.id)}
+        >
+          <img
+            src={recommendationProduct.image}
             key={recommendationProduct.id}
-            type="button"
-            onClick={() => navigate(recommendationProduct.id)}
-          >
-            <img
-              src={recommendationProduct.image}
-              key={recommendationProduct.id}
-              alt={recommendationProduct.name}
-            />
-          </button>
-        </>
+            alt={recommendationProduct.name}
+          />
+        </button>
       ))}
     </div>
   );

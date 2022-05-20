@@ -1,13 +1,13 @@
 import * as React from "react";
 
-interface Product {
+export interface Product {
   id: string;
   name: string;
   price: Number;
   image: string;
 }
 
-interface CartPageProps {
+export interface CartPageProps {
   cart: Array<Product>;
 }
 
@@ -25,7 +25,7 @@ export const CartPage: React.FC<CartPageProps> = ({ cart }) => {
       <hr />
       {cart.map((product) => {
         return (
-          <div className="row">
+          <div className="row" key={product.id}>
             <div className="col-md-4">
               <img
                 src={product.image}

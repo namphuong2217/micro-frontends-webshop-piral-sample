@@ -12,6 +12,7 @@ import {
 import { createContainersApi } from "piral-containers";
 import { createMenuApi } from "piral-menu";
 import { layout, errors } from "./layout";
+// import { createVueApi } from "piral-vue";
 
 // Micro Frontend feeds host all Micro Frontends
 const feedUrl =

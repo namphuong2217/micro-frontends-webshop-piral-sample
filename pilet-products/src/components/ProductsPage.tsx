@@ -25,7 +25,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({ history }) => {
         <div id="landing-products-list">
           <div className="cards">
             {products.map((product) => (
-              <div className="card">
+              <div className="card" key={product.id}>
                 <div className="container">
                   <img src={product.image} alt={product.name} />
                   <h4>
