@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1653049145304" clover="3.2.0">
-  <project timestamp="1653049145305" name="All files">
+<coverage generated="1653080234748" clover="3.2.0">
+  <project timestamp="1653080234748" name="All files">
     <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3" elements="12" coveredelements="10" complexity="0" loc="8" ncloc="8" packages="1" files="2" classes="2"/>
     <file name="BuyButton.tsx" path="C:\Users\nnguyen\developments\Thesis Sample Application Materials\webshop-piral\pilet-carts\src\components\BuyButton.tsx">
       <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>

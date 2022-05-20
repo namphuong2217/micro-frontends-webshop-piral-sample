@@ -1,7 +1,7 @@
 import * as React from "react";
 import { History } from "history";
 import ProductDetailsPage from "../components/ProductDetailsPage";
-import { shallow, mount, render } from "enzyme";
+import { shallow, render } from "enzyme";
 
 const TestDummyComponent = () => <div />;
 
