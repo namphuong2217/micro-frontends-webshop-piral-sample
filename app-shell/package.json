@@ -36,6 +36,7 @@
     "@types/react-dom": "^17",
     "@types/react-router": "^5",
     "@types/react-router-dom": "^5",
+    "copy-webpack-plugin": "^11.0.0",
     "piral-cli": "0.14.19",
     "piral-cli-webpack": "0.14.19",
     "typescript": "latest"
