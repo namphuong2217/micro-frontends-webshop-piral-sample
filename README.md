@@ -2,4 +2,4 @@
 
 ### Comple work and final results of the thesis:
 
-![Micro Frontends Thesis Nguyen](https://github.com/namphuong2217/micro-frontends-webshop-piral-sample/tree/main/thesis)
+[Micro Frontends Thesis Nguyen](https://github.com/namphuong2217/micro-frontends-webshop-piral-sample/tree/main/thesis)
